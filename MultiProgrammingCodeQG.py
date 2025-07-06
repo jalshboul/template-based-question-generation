@@ -1174,55 +1174,32 @@ class MultiLanguageQuestionGenerator:
                 })
         return all_questions
     def _enforce_bloom_distribution(self, questions: List[Dict[str, Any]], num_questions: int = 6) -> List[Dict[str, Any]]:
-        """Try to balance the number of questions across all available Bloom levels, randomly sampling from each."""
-        import collections
-        if not questions:
-            return []
-
-        # Group questions by Bloom level
-        bloom_groups = collections.defaultdict(list)
-        for q in questions:
-            bloom = q.get('bloom', 'other')
-            bloom_groups[bloom].append(q)
-
-        bloom_levels = list(bloom_groups.keys())
-        n_levels = len(bloom_levels)
-        # Calculate how many questions per level (as even as possible)
-        base = num_questions // n_levels
-        remainder = num_questions % n_levels
-
-        # Shuffle bloom_levels for randomness
-        import random
-        random.shuffle(bloom_levels)
+        """Enforce exactly one 'remember' and the rest 'evaluate' questions in the set. Fallback to other types if not enough."""
+        remember_qs = [q for q in questions if q.get('bloom') == 'remember']
+        evaluate_qs = [q for q in questions if q.get('bloom') == 'evaluate']
+        other_qs = [q for q in questions if q.get('bloom') not in ('remember', 'evaluate')]
 
         result = []
-        # First, sample base number from each level
-        for bloom in bloom_levels:
-            sample_count = min(base, len(bloom_groups[bloom]))
-            result.extend(random.sample(bloom_groups[bloom], sample_count))
+        # Always pick one 'remember' if available, else fallback to any
+        if remember_qs:
+            result.append(random.choice(remember_qs))
+        elif questions:
+            result.append(random.choice(questions))
 
-        # Distribute the remainder
-        left = num_questions - len(result)
-        if left > 0:
-            # For each bloom level, try to add one more if available
-            extra_candidates = []
-            for bloom in bloom_levels:
-                # Only add if there are unused questions in this group
-                used = [q for q in result if q.get('bloom') == bloom]
-                unused = [q for q in bloom_groups[bloom] if q not in used]
-                if unused:
-                    extra_candidates.append(unused)
-            # Flatten and shuffle
-            flat = [q for group in extra_candidates for q in group]
-            random.shuffle(flat)
-            result.extend(flat[:left])
-
-        # If still not enough, fill with any remaining unused questions
-        if len(result) < num_questions:
+        # Fill the rest with 'evaluate', or fallback to other types if not enough
+        needed = num_questions - len(result)
+        evals = random.sample(evaluate_qs, min(needed, len(evaluate_qs)))
+        result.extend(evals)
+        needed = num_questions - len(result)
+        if needed > 0:
+            # Fill with other types if not enough 'evaluate'
+            others = [q for q in other_qs if q not in result]
+            result.extend(random.sample(others, min(needed, len(others))))
+        # If still not enough, fill with any remaining
+        needed = num_questions - len(result)
+        if needed > 0:
             leftovers = [q for q in questions if q not in result]
-            random.shuffle(leftovers)
-            result.extend(leftovers[:num_questions - len(result)])
-
+            result.extend(random.sample(leftovers, min(needed, len(leftovers))))
         # Truncate to num_questions
         return result[:num_questions]
     def generate_questions(self, code: str, num_questions: int = 6, difficulty: DifficultyLevel = DifficultyLevel.INTERMEDIATE, min_remember: int = 1, min_evaluate: int = 1) -> List[Dict[str, Any]]:
