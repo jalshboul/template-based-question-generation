@@ -1,0 +1,7 @@
+question,difficulty,category,variable_name,bloom,function_name,line_num
+How many times is the variable 'text' modified in the code?,intermediate,variable,text,analyze,,
+Does the use of variable 'i' make the code more readable or less readable? Explain.,intermediate,variable,i,evaluate,,
+Does function 'compute_lps_array' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,,evaluate,compute_lps_array,
+Does the conditional on line 84 improve code safety? Why or why not?,intermediate,condition,,evaluate,,84.0
+Does the conditional on line 73 improve code safety? Why or why not?,intermediate,condition,,evaluate,,73.0
+Does the conditional on line 98 improve code safety? Why or why not?,intermediate,condition,,evaluate,,98.0

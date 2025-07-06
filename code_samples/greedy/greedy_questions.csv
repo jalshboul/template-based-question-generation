@@ -1,0 +1,7 @@
+question,difficulty,category,function_name,bloom,line_num,loop_type,variable_name
+"Trace the execution of function 'activity_selection' with inputs x, x.",intermediate,function,activity_selection,apply,,,
+Does the conditional on line 36 improve code safety? Why or why not?,intermediate,condition,,evaluate,36.0,,
+Does the for loop on line 54 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,54.0,for,
+Does the for loop on line 34 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,34.0,for,
+Does the use of variable 'activities' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,,,activities
+Does function 'activity_selection' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,activity_selection,evaluate,,,

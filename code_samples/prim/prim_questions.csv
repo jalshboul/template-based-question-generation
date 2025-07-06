@@ -1,0 +1,7 @@
+question,difficulty,category,variable_name,bloom,algorithm_name,function_name,loop_type,line_num
+Does the use of variable 'mst_edges' make the code more readable or less readable? Explain.,intermediate,variable,mst_edges,evaluate,,,,
+How would you evaluate the efficiency of this algorithm for large inputs?,intermediate,algorithm,,evaluate,greedy_algorithm,,,
+How would you assess the maintainability of function 'prims_algorithm'?,intermediate,function,,evaluate,,prims_algorithm,,
+Does the while loop on line 41 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,,,while,41.0
+Does the use of variable 'mst_edges' make the code more readable or less readable? Explain.,intermediate,variable,mst_edges,evaluate,,,,
+Does the conditional on line 53 improve code safety? Why or why not?,intermediate,condition,,evaluate,,,,53.0

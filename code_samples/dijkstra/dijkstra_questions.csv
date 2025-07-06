@@ -1,0 +1,7 @@
+question,difficulty,category,variable_name,bloom,line_num,loop_type
+Could the variable 'start_vertex' be declared with a different scope? What impact would that have?,intermediate,variable,start_vertex,analyze,,
+Does the conditional on line 88 improve code safety? Why or why not?,intermediate,condition,,evaluate,88.0,
+Does the use of variable 'priority_queue' make the code more readable or less readable? Explain.,intermediate,variable,priority_queue,evaluate,,
+Does the use of variable 'current' make the code more readable or less readable? Explain.,intermediate,variable,current,evaluate,,
+Does the while loop on line 40 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,40.0,while
+Does the use of variable 'distance' make the code more readable or less readable? Explain.,intermediate,variable,distance,evaluate,,

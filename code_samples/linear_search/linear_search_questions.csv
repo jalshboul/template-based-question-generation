@@ -1,0 +1,7 @@
+question,difficulty,category,loop_type,line_num,bloom,function_name,variable_name
+How would you rewrite the for loop on line 23 using a different type of loop?,intermediate,loop,for,23.0,create,,
+Does function 'linear_search' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,,,evaluate,linear_search,
+Does the conditional on line 38 improve code safety? Why or why not?,intermediate,condition,,38.0,evaluate,,
+Does the use of variable 'test_array' make the code more readable or less readable? Explain.,intermediate,variable,,,evaluate,,test_array
+Does the for loop on line 23 improve or hinder code readability? Explain.,intermediate,loop,for,23.0,evaluate,,
+How would you assess the maintainability of function 'linear_search'?,intermediate,function,,,evaluate,linear_search,

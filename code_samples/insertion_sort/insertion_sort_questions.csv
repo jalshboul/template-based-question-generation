@@ -1,0 +1,7 @@
+question,difficulty,category,function_name,bloom,variable_name,loop_type,line_num
+Is the function 'insertion_sort' recursive? Explain why or why not.,intermediate,function,insertion_sort,analyze,,,
+How would you assess the maintainability of function 'insertion_sort'?,intermediate,function,insertion_sort,evaluate,,,
+Does the use of variable 'test_array' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,test_array,,
+Does the use of variable 'key' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,key,,
+Does the use of variable 'j' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,j,,
+Does the while loop on line 29 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,,while,29.0

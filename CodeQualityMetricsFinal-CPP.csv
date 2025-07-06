@@ -1,0 +1,115 @@
+Code,functions,loops,conditionals,variables,lines,complexity,GeneratedQuestions
+binary_search,1,1,1,1,24,Simple,"1. [beginner] What is the initial value of 'low'?
+2. [beginner] How many times will the while loop on line 10 execute with typical input?
+3. [intermediate] What is the expected output when this algorithm is executed with input [1, 2, 3, 4, 5], target=3?
+4. [intermediate] What would happen if 'low' was not initialized?
+5. [advanced] Identify potential optimizations for this algorithm.
+6. [advanced] What is the space complexity of this algorithm? Justify your answer."
+linear_search,1,1,1,1,13,Simple,"1. [beginner] What is the purpose of the conditional statement on line 8?
+2. [beginner] What is the data type of variable 'i'?
+3. [intermediate] Is the function 'linear_search' recursive? Explain why or why not.
+4. [intermediate] What are the postconditions after function 'linear_search' completes execution?
+5. [advanced] How does the conditional on line 8 affect the program's control flow?
+6. [advanced] What is the space complexity of function 'linear_search'? Explain your reasoning."
+bubble_sort,1,1,1,1,16,Simple,"1. [beginner] What is the initial value of 'n'?
+2. [beginner] How many parameters does function 'bubble_sort' accept?
+3. [intermediate] What are the preconditions that must be true before calling function 'for'?
+4. [intermediate] What is the value of 'n' after line 7?
+5. [advanced] Is the variable 'n' used optimally? Could its usage be improved?
+6. [advanced] Could the conditional on line 10 introduce any potential bugs? Explain."
+insertion_sort,1,1,1,1,19,Simple,"1. [beginner] What is the data type of variable 'i'?
+2. [beginner] What is the purpose of the function 'for'?
+3. [intermediate] What would happen if 'i' was not initialized?
+4. [intermediate] What would happen if 'n' was not initialized?
+5. [advanced] Could variable 'n' cause any memory-related issues? Explain.
+6. [advanced] Analyze the efficiency of the while loop on line 12. Can it be improved?"
+selection_sort,1,1,1,1,17,Simple,"1. [beginner] What is the data type of variable 'min_idx'?
+2. [beginner] What is the purpose of the function 'selection_sort'?
+3. [intermediate] How many times is the variable 'min_idx' modified in the code?
+4. [intermediate] What are the preconditions that must be true before calling function 'selection_sort'?
+5. [advanced] Is the variable 'n' used optimally? Could its usage be improved?
+6. [advanced] Is the variable 'j' used optimally? Could its usage be improved?"
+merge_sort,1,1,1,1,54,Moderate,"1. [beginner] Under what condition(s) will the code block on line 45 execute?
+2. [beginner] What is the purpose of this algorithm?
+3. [intermediate] What is the termination condition for the while loop on line 30?
+4. [intermediate] What would happen if function 'merge' received x, x, x, x as arguments?
+5. [advanced] What is the space complexity of function 'while'? Explain your reasoning.
+6. [advanced] What is the space complexity of function 'if'? Explain your reasoning."
+quick_sort,1,1,1,1,28,Moderate,"1. [beginner] List all the functions in this code and describe what each one does.
+2. [beginner] How many parameters does function 'for' accept?
+3. [intermediate] What would happen if you reversed the condition on line 11?
+4. [intermediate] What values will the variable 'j' take in the for loop?
+5. [advanced] How does the conditional on line 11 affect the program's control flow?
+6. [advanced] Identify potential side effects of function 'partition' and how they could be eliminated."
+dfs,1,1,1,1,42,Moderate,"1. [beginner] Under what condition(s) will the code block on line 36 execute?
+2. [beginner] How many parameters does function 'Graph' accept?
+3. [intermediate] What would happen if you reversed the condition on line 30?
+4. [intermediate] How many times is the variable 'V' modified in the code?
+5. [advanced] What edge cases might cause function 'addEdge' to fail? How would you handle them?
+6. [advanced] Analyze the short-circuit evaluation in the condition on line 30. Does it affect performance?"
+bfs,1,1,1,1,41,Moderate,"1. [beginner] What is the purpose of the function 'Graph'?
+2. [beginner] What does the function 'addEdge' return?
+3. [intermediate] What are the postconditions after function 'addEdge' completes execution?
+4. [intermediate] Is the function 'if' recursive? Explain why or why not.
+5. [advanced] How does the conditional on line 33 affect the program's control flow?
+6. [advanced] Is the variable 'V' used optimally? Could its usage be improved?"
+dijkstra,1,1,1,1,52,Moderate,"1. [beginner] What is the data type of variable 'V'?
+2. [beginner] How many times will the while loop on line 31 execute with typical input?
+3. [intermediate] What are the postconditions after function 'Graph' completes execution?
+4. [intermediate] Is there any redundancy in the conditional statement on line 39?
+5. [advanced] How would you modify function 'addEdge' to make it thread-safe?
+6. [advanced] What would be the impact on performance if you unrolled the loop on line 31?"
+dynamic_programming,1,1,1,1,21,Moderate,"1. [beginner] What is the purpose of the conditional statement on line 12?
+2. [beginner] What is the purpose of the function 'knapsack'?
+3. [intermediate] How many times is the variable 'w' modified in the code?
+4. [intermediate] What would happen if function 'knapsack' received x, x, x, x as arguments?
+5. [advanced] What are the trade-offs involved in using this algorithm versus alternatives?
+6. [advanced] What is the time complexity of function 'knapsack'? Justify your answer."
+greedy_algorithm,1,1,1,1,35,Moderate,"1. [beginner] Under what condition(s) will the code block on line 29 execute?
+2. [beginner] What algorithm is implemented in this code?
+3. [intermediate] What is the value of 'i' after line 22?
+4. [intermediate] How does this implementation differ from the standard greedy_algorithm algorithm?
+5. [advanced] Identify potential optimizations for this algorithm.
+6. [advanced] Is the variable 'j' used optimally? Could its usage be improved?"
+kmp_algorithm,1,1,1,1,59,Complex,"1. [beginner] Under what condition(s) will the code block on line 51 execute?
+2. [beginner] What is the initial value of 'len'?
+3. [intermediate] Is the function 'if' recursive? Explain why or why not.
+4. [intermediate] Trace the execution of function 'if' with inputs x.
+5. [advanced] Could variable 'len' cause any memory-related issues? Explain.
+6. [advanced] What is the space complexity of function 'if'? Explain your reasoning."
+kruskal_algorithm,1,1,1,1,90,Complex,"1. [beginner] What are the parameters of function 'Graph'?
+2. [beginner] What does the function 'Graph' return?
+3. [intermediate] What would happen if 'i' was not initialized?
+4. [intermediate] What would happen if the loop on line 72 never terminates? How could you fix it?
+5. [advanced] Is the variable 'i' used optimally? Could its usage be improved?
+6. [advanced] Identify potential side effects of function 'find' and how they could be eliminated."
+prim_algorithm,1,1,1,1,76,Complex,"1. [beginner] What is the purpose of variable 'V'?
+2. [beginner] What is the data type of variable 'v'?
+3. [intermediate] What would happen if you reversed the condition on line 48?
+4. [intermediate] What would happen if 'src' was not initialized?
+5. [advanced] How would you modify function 'addEdge' to make it thread-safe?
+6. [advanced] What is the space complexity of function 'Graph'? Explain your reasoning."
+floyd_warshall,1,1,1,1,50,Complex,"1. [beginner] What happens in each iteration of the for loop on line 26?
+2. [beginner] What is the purpose of the for loop on line 39?
+3. [intermediate] What values will the variable 'i' take in the for loop?
+4. [intermediate] Is the function 'Graph' recursive? Explain why or why not.
+5. [advanced] Identify any potential issues with the way variable 'i' is used in the code.
+6. [advanced] Analyze the short-circuit evaluation in the condition on line 27. Does it affect performance?"
+topological_sort,1,1,1,1,48,Complex,"1. [beginner] What are the parameters of function 'addEdge'?
+2. [beginner] What is the purpose of the while loop on line 42?
+3. [intermediate] What would happen if 'V' was not initialized?
+4. [intermediate] What are the preconditions that must be true before calling function 'Graph'?
+5. [advanced] How would you parallelize the loop on line 36 for better performance?
+6. [advanced] What would be the impact on performance if you unrolled the loop on line 36?"
+a_star_search,1,1,1,1,167,Complex,"1. [beginner] What is the purpose of the while loop on line 114?
+2. [beginner] What happens in each iteration of the for loop on line 91?
+3. [intermediate] What would happen if 'temp_row' was not initialized?
+4. [intermediate] What is the termination condition for the while loop on line 49?
+5. [advanced] Identify potential side effects of function 'AStar' and how they could be eliminated.
+6. [advanced] How would you modify function 'isValid' to make it thread-safe?"
+huffman_coding,1,1,1,1,74,Complex,"1. [beginner] List all the functions in this code and describe what each one does.
+2. [beginner] Under what condition(s) will the code block on line 24 execute?
+3. [intermediate] Is there any redundancy in the conditional statement on line 24?
+4. [intermediate] Can the condition on line 24 be simplified? If so, how?
+5. [advanced] Could the conditional on line 24 introduce any potential bugs? Explain.
+6. [advanced] Identify any potential issues with the way variable 'data' is used in the code."

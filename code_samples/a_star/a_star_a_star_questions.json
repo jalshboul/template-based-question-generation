@@ -1,0 +1,44 @@
+[
+  {
+    "question": "What is the initial value of 'fScore'?",
+    "difficulty": "beginner",
+    "category": "variable",
+    "variable_name": "fScore",
+    "bloom": "remember"
+  },
+  {
+    "question": "Is the variable 'smallest' named appropriately? Why or why not?",
+    "difficulty": "beginner",
+    "category": "variable",
+    "variable_name": "smallest",
+    "bloom": "evaluate"
+  },
+  {
+    "question": "Does function 'if' handle errors or edge cases effectively? Explain your reasoning.",
+    "difficulty": "intermediate",
+    "category": "function",
+    "function_name": "if",
+    "bloom": "evaluate"
+  },
+  {
+    "question": "What is the time complexity of function 'createPriorityQueue'? Justify your answer.",
+    "difficulty": "advanced",
+    "category": "function",
+    "function_name": "createPriorityQueue",
+    "bloom": "evaluate"
+  },
+  {
+    "question": "How would you evaluate the robustness of the conditional on line 86?",
+    "difficulty": "advanced",
+    "category": "condition",
+    "line_num": 86,
+    "bloom": "evaluate"
+  },
+  {
+    "question": "What is the value of 'y' after line 24?",
+    "difficulty": "intermediate",
+    "category": "variable",
+    "variable_name": "y",
+    "bloom": "apply"
+  }
+]

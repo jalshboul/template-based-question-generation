@@ -1,37 +1,9 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-.venv/
-venv/
-ENV/
 
 # Jupyter
 .ipynb_checkpoints/
 
 # VSCode
 .vscode/
-
-# Data/Results
-*.csv
-*.xlsx
-*.json
-*.pdf
-*.docx
-*.md.bak
-*.tmp
-*.log
-*.out
-*.bak
-
-# Plots/Images
-*.png
-*.jpg
-*.jpeg
-*.svg
 
 # OS
 .DS_Store

@@ -1,0 +1,7 @@
+question,difficulty,category,function_name,bloom,line_num,variable_name
+Does function 'reconstruct_path' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,reconstruct_path,evaluate,,
+Does the conditional on line 36 improve code safety? Why or why not?,intermediate,condition,,evaluate,36.0,
+Does the use of variable 'n' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,,n
+Does function 'floyd_warshall' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,floyd_warshall,evaluate,,
+Does the use of variable 'next_vertex' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,,next_vertex
+Does the use of variable 'u' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,,u

@@ -1,0 +1,7 @@
+question,difficulty,category,algorithm_name,bloom,variable_name,line_num,function_name
+What would happen if the input to this algorithm was changed?,intermediate,algorithm,binary_search,apply,,,
+Does the use of variable 'target' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,target,,
+How would you evaluate the efficiency of this algorithm for large inputs?,intermediate,algorithm,binary_search,evaluate,,,
+Does the conditional on line 30 improve code safety? Why or why not?,intermediate,condition,,evaluate,,30.0,
+Does the use of variable 'test_array' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,test_array,,
+Does function 'binary_search' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,,evaluate,,,binary_search

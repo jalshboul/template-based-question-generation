@@ -1,0 +1,7 @@
+bloom,category,difficulty,function_name,line_num,question,variable_name
+remember,variable,beginner,,,What is the initial value of 'fScore'?,fScore
+evaluate,variable,beginner,,,Is the variable 'smallest' named appropriately? Why or why not?,smallest
+evaluate,function,intermediate,if,,Does function 'if' handle errors or edge cases effectively? Explain your reasoning.,
+evaluate,function,advanced,createPriorityQueue,,What is the time complexity of function 'createPriorityQueue'? Justify your answer.,
+evaluate,condition,advanced,,86,How would you evaluate the robustness of the conditional on line 86?,
+apply,variable,intermediate,,,What is the value of 'y' after line 24?,y

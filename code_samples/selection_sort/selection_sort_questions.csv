@@ -1,0 +1,7 @@
+question,difficulty,category,function_name,bloom,line_num,loop_type
+What would happen if function 'selection_sort' received x as arguments?,intermediate,function,selection_sort,apply,,
+Does the conditional on line 30 improve code safety? Why or why not?,intermediate,condition,,evaluate,30.0,
+Does the conditional on line 40 improve code safety? Why or why not?,intermediate,condition,,evaluate,40.0,
+Does the for loop on line 26 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,26.0,for
+Does the for loop on line 29 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,29.0,for
+Does function 'selection_sort' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,selection_sort,evaluate,,

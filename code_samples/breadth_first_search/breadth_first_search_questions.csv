@@ -1,0 +1,7 @@
+question,difficulty,category,variable_name,bloom,loop_type,line_num
+What is the value of 'graph' after line 50?,intermediate,variable,graph,apply,,
+Does the use of variable 'queue' make the code more readable or less readable? Explain.,intermediate,variable,queue,evaluate,,
+Does the use of variable 'visited' make the code more readable or less readable? Explain.,intermediate,variable,visited,evaluate,,
+Does the while loop on line 31 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,while,31.0
+Does the for loop on line 39 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,for,39.0
+Does the conditional on line 40 improve code safety? Why or why not?,intermediate,condition,,evaluate,,40.0

@@ -1,0 +1,7 @@
+question,difficulty,category,variable_name,bloom,line_num,function_name
+How many times is the variable 'visited' modified in the code?,intermediate,variable,visited,analyze,,
+Does the conditional on line 50 improve code safety? Why or why not?,intermediate,condition,,evaluate,50.0,
+Does the use of variable 'stack' make the code more readable or less readable? Explain.,intermediate,variable,stack,evaluate,,
+Does function '_topological_sort_util' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,,evaluate,,_topological_sort_util
+Does the use of variable 'visited' make the code more readable or less readable? Explain.,intermediate,variable,visited,evaluate,,
+How would you assess the maintainability of function 'topological_sort'?,intermediate,function,,evaluate,,topological_sort

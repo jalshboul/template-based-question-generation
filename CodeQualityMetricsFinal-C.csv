@@ -1,0 +1,115 @@
+Code,functions,loops,conditionals,variables,lines,complexity,GeneratedQuestions
+binary_search,1,1,1,1,20,Simple,"1. [beginner] What is the purpose of variable 'mid'?
+2. [beginner] What does the function 'binary_search' return?
+3. [intermediate] How many times is the variable 'mid' modified in the code?
+4. [intermediate] How does this implementation differ from the standard binary_search algorithm?
+5. [advanced] What edge cases might cause function 'binary_search' to fail? How would you handle them?
+6. [advanced] Is the variable 'high' used optimally? Could its usage be improved?"
+linear_search,1,1,1,1,9,Simple,"1. [beginner] What is the data type of variable 'i'?
+2. [beginner] How many times will the for loop on line 3 execute with typical input?
+3. [intermediate] What are the postconditions after function 'linear_search' completes execution?
+4. [intermediate] What is the value of 'i' after line 3?
+5. [advanced] What is the time complexity of function 'for'? Justify your answer.
+6. [advanced] How could you optimize function 'linear_search' for better performance?"
+bubble_sort,1,1,1,1,14,Simple,"1. [beginner] What is the initial value of 'i'?
+2. [beginner] List all the functions in this code and describe what each one does.
+3. [intermediate] How many times is the variable 'temp' modified in the code?
+4. [intermediate] How many times is the variable 'i' modified in the code?
+5. [advanced] Identify potential side effects of function 'bubble_sort' and how they could be eliminated.
+6. [advanced] What edge cases might cause function 'bubble_sort' to fail? How would you handle them?"
+insertion_sort,1,1,0,1,14,Simple,"1. [beginner] What is the purpose of the function 'insertion_sort'?
+2. [beginner] What is the purpose of the while loop on line 7?
+3. [intermediate] Is the function 'while' recursive? Explain why or why not.
+4. [intermediate] What would happen if 'i' was not initialized?
+5. [advanced] Is the variable 'i' used optimally? Could its usage be improved?
+6. [advanced] Identify any potential issues with the way variable 'i' is used in the code."
+selection_sort,1,1,1,1,19,Simple,"1. [beginner] What is the data type of variable 'j'?
+2. [beginner] What does the function 'for' return?
+3. [intermediate] What would happen if 'i' was not initialized?
+4. [intermediate] What is the value of 'i' after line 3?
+5. [advanced] Identify any potential issues with the way variable 'i' is used in the code.
+6. [advanced] Is the variable 'i' used optimally? Could its usage be improved?"
+merge_sort,1,1,1,1,60,Moderate,"1. [beginner] What is the purpose of the function 'while'?
+2. [beginner] What happens in each iteration of the for loop on line 14?
+3. [intermediate] How many times is the variable 'n2' modified in the code?
+4. [intermediate] What data structures are used in this algorithm and why?
+5. [advanced] Identify any potential issues with the way variable 'n2' is used in the code.
+6. [advanced] Identify potential optimizations for this algorithm."
+quick_sort,1,1,1,1,31,Moderate,"1. [beginner] List all the functions in this code and describe what each one does.
+2. [beginner] What is the purpose of variable 'j'?
+3. [intermediate] What are the postconditions after function 'for' completes execution?
+4. [intermediate] What are the preconditions that must be true before calling function 'partition'?
+5. [advanced] How would making variable 'i' immutable (const/final) affect the code?
+6. [advanced] How could you optimize function 'partition' for better performance?"
+dfs,1,1,1,1,70,Moderate,"1. [beginner] What is the purpose of variable 'top'?
+2. [beginner] What happens in each iteration of the while loop on line 48?
+3. [intermediate] What are the postconditions after function 'push' completes execution?
+4. [intermediate] What are the preconditions that must be true before calling function 'pop'?
+5. [advanced] Identify any potential issues with the way variable 'top' is used in the code.
+6. [advanced] Could the conditional on line 60 introduce any potential bugs? Explain."
+bfs,1,1,1,1,58,Moderate,"1. [beginner] How many parameters does function 'enqueue' accept?
+2. [beginner] List all the functions in this code and describe what each one does.
+3. [intermediate] What is the termination condition for the while loop on line 36?
+4. [intermediate] Is the function 'is_queue_empty' recursive? Explain why or why not.
+5. [advanced] Identify potential side effects of function 'dequeue' and how they could be eliminated.
+6. [advanced] What edge cases might cause function 'dequeue' to fail? How would you handle them?"
+dijkstra,1,1,1,1,65,Moderate,"1. [beginner] What is the data type of variable 'capacity'?
+2. [beginner] What is the purpose of variable 'size'?
+3. [intermediate] What is the value of 'v' after line 10?
+4. [intermediate] What would happen if 'dist' was not initialized?
+5. [advanced] Is the variable 'dist' used optimally? Could its usage be improved?
+6. [advanced] Is the variable 'u' used optimally? Could its usage be improved?"
+dynamic_programming,1,1,1,1,20,Moderate,"1. [beginner] What is the purpose of the function 'for'?
+2. [beginner] What problem does this algorithm solve?
+3. [intermediate] Is the function 'for' recursive? Explain why or why not.
+4. [intermediate] What would happen if the loop on line 7 never terminates? How could you fix it?
+5. [advanced] What is the time complexity of this algorithm? Provide a detailed analysis.
+6. [advanced] How does the conditional on line 9 affect the program's control flow?"
+greedy_algorithm,1,1,1,1,24,Moderate,"1. [beginner] What is the purpose of the function 'for'?
+2. [beginner] What is the initial value of 'i'?
+3. [intermediate] What is the termination condition for the for loop on line 10?
+4. [intermediate] Is there any redundancy in the conditional statement on line 13?
+5. [advanced] Is the variable 'i' used optimally? Could its usage be improved?
+6. [advanced] What is the time complexity of function 'activity_selection'? Justify your answer."
+kmp_algorithm,1,1,1,1,54,Complex,"1. [beginner] What does the function 'if' return?
+2. [beginner] What is the data type of variable 'i'?
+3. [intermediate] Is there any redundancy in the conditional statement on line 37?
+4. [intermediate] Trace the execution of function 'while' with inputs x.
+5. [advanced] Identify any potential issues with the way variable 'len' is used in the code.
+6. [advanced] Analyze the short-circuit evaluation in the condition on line 13. Does it affect performance?"
+kruskal_algorithm,1,1,1,1,89,Complex,"1. [beginner] What are the parameters of function 'compare'?
+2. [beginner] What does the function 'compare' return?
+3. [intermediate] Trace the execution of function 'find' with inputs [1, 2, 3], x.
+4. [intermediate] How many times is the variable 'v' modified in the code?
+5. [advanced] What would be the impact on performance if you unrolled the loop on line 58?
+6. [advanced] What is the time complexity of function 'kruskal_mst'? Justify your answer."
+prim_algorithm,1,1,1,1,61,Complex,"1. [beginner] Under what condition(s) will the code block on line 14 execute?
+2. [beginner] What is the initial value of 'v'?
+3. [intermediate] What is the termination condition for the for loop on line 24?
+4. [intermediate] What is the termination condition for the for loop on line 53?
+5. [advanced] Is the variable 'i' used optimally? Could its usage be improved?
+6. [advanced] What is the space complexity of function 'print_mst'? Explain your reasoning."
+floyd_warshall,1,1,1,1,47,Complex,"1. [beginner] List all the functions in this code and describe what each one does.
+2. [beginner] What is the purpose of the for loop on line 23?
+3. [intermediate] What is the termination condition for the for loop on line 14?
+4. [intermediate] What values will the variable 'k' take in the for loop?
+5. [advanced] What edge cases might cause function 'for' to fail? How would you handle them?
+6. [advanced] What edge cases might cause function 'floyd_warshall' to fail? How would you handle them?"
+topological_sort,1,1,1,1,68,Complex,"1. [beginner] What is the purpose of variable 'stack_index'?
+2. [beginner] What is the purpose of variable 'V'?
+3. [intermediate] Is the function 'topological_sort_util' recursive? Explain why or why not.
+4. [intermediate] Is the function 'for' recursive? Explain why or why not.
+5. [advanced] How would making variable 'V' immutable (const/final) affect the code?
+6. [advanced] Identify any potential issues with the way variable 'i' is used in the code."
+a_star_search,1,1,1,1,130,Complex,"1. [beginner] What is the data type of variable 'first'?
+2. [beginner] What is the purpose of the function 'if'?
+3. [intermediate] How many times is the variable 'second' modified in the code?
+4. [intermediate] What would happen if 'f' was not initialized?
+5. [advanced] How would you parallelize the loop on line 85 for better performance?
+6. [advanced] What edge cases might cause function 'is_valid' to fail? How would you handle them?"
+huffman_coding,1,1,1,1,353,Complex,"1. [beginner] What is the purpose of the function 'create_min_heap'?
+2. [beginner] What is the purpose of variable 'n2'?
+3. [intermediate] Is the function 'decreaseKey' recursive? Explain why or why not.
+4. [intermediate] Is the function 'isEmpty' recursive? Explain why or why not.
+5. [advanced] Analyze the efficiency of the for loop on line 163. Can it be improved?
+6. [advanced] What is the time complexity of function 'insert_min_heap'? Justify your answer."

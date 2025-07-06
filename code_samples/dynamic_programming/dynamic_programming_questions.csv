@@ -1,0 +1,7 @@
+question,difficulty,category,loop_type,line_num,bloom,function_name,variable_name
+What would happen if the loop on line 46 never terminates? How could you fix it?,intermediate,loop,for,46.0,analyze,,
+Does the conditional on line 48 improve code safety? Why or why not?,intermediate,condition,,48.0,evaluate,,
+Does function 'knapsack_01' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,,,evaluate,knapsack_01,
+Does the use of variable 'n' make the code more readable or less readable? Explain.,intermediate,variable,,,evaluate,,n
+Does the use of variable 'selected_items' make the code more readable or less readable? Explain.,intermediate,variable,,,evaluate,,selected_items
+Does the use of variable 'weights' make the code more readable or less readable? Explain.,intermediate,variable,,,evaluate,,weights

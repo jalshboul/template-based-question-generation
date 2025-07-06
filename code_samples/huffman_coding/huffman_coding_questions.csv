@@ -1,0 +1,7 @@
+question,difficulty,category,line_num,bloom,variable_name
+"Can the condition on line 97 be simplified? If so, how?",intermediate,condition,97.0,analyze,
+Does the conditional on line 147 improve code safety? Why or why not?,intermediate,condition,147.0,evaluate,
+Does the use of variable 'priority_queue' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,priority_queue
+Does the use of variable 'current_code' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,current_code
+Does the use of variable 'reverse_mapping' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,reverse_mapping
+Does the use of variable 'compression_ratio' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,compression_ratio

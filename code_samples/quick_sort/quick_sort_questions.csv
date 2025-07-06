@@ -1,0 +1,7 @@
+question,difficulty,category,variable_name,bloom,line_num,algorithm_name
+What is the value of 'sorted_array' after line 43?,intermediate,variable,sorted_array,apply,,
+Does the conditional on line 22 improve code safety? Why or why not?,intermediate,condition,,evaluate,22.0,
+Does the use of variable 'left' make the code more readable or less readable? Explain.,intermediate,variable,left,evaluate,,
+How would you evaluate the efficiency of this algorithm for large inputs?,intermediate,algorithm,,evaluate,,merge_sort
+Does the use of variable 'pivot' make the code more readable or less readable? Explain.,intermediate,variable,pivot,evaluate,,
+Does the use of variable 'middle' make the code more readable or less readable? Explain.,intermediate,variable,middle,evaluate,,

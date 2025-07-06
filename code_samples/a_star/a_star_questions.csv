@@ -1,0 +1,7 @@
+question,difficulty,category,loop_type,line_num,bloom,function_name
+What would happen if the loop on line 150 never terminates? How could you fix it?,intermediate,loop,for,150.0,analyze,
+How would you assess the maintainability of function 'search'?,intermediate,function,,,evaluate,search
+Does function 'search' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,,,evaluate,search
+How would you assess the maintainability of function 'grid_example'?,intermediate,function,,,evaluate,grid_example
+Does the for loop on line 155 improve or hinder code readability? Explain.,intermediate,loop,for,155.0,evaluate,
+How would you assess the maintainability of function 'is_goal'?,intermediate,function,,,evaluate,is_goal

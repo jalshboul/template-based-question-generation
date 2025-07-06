@@ -1,0 +1,7 @@
+question,difficulty,category,function_name,bloom,variable_name,loop_type,line_num
+"What would happen if function '__init__' received x, x as arguments?",intermediate,function,__init__,apply,,,
+Does function 'union' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,union,evaluate,,,
+Does the use of variable 'total_weight' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,total_weight,,
+Does the for loop on line 85 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,,for,85.0
+Does the conditional on line 57 improve code safety? Why or why not?,intermediate,condition,,evaluate,,,57.0
+Does the use of variable 'num_vertices' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,num_vertices,,

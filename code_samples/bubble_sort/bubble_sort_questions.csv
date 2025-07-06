@@ -1,0 +1,7 @@
+question,difficulty,category,function_name,bloom,line_num,variable_name,loop_type
+Does function 'bubble_sort' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,bubble_sort,evaluate,,,
+Does the conditional on line 33 improve code safety? Why or why not?,intermediate,condition,,evaluate,33.0,,
+Does the conditional on line 38 improve code safety? Why or why not?,intermediate,condition,,evaluate,38.0,,
+Does the use of variable 'n' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,,n,
+Does the use of variable 'test_array' make the code more readable or less readable? Explain.,intermediate,variable,,evaluate,,test_array,
+Does the for loop on line 30 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,30.0,,for

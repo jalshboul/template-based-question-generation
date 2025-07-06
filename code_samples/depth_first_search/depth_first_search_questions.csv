@@ -1,0 +1,7 @@
+question,difficulty,category,loop_type,line_num,bloom,variable_name,function_name
+Does the for loop on line 30 improve or hinder code readability? Explain.,intermediate,loop,for,30.0,evaluate,,
+Does the conditional on line 31 improve code safety? Why or why not?,intermediate,condition,,31.0,evaluate,,
+Does the use of variable 'result' make the code more readable or less readable? Explain.,intermediate,variable,,,evaluate,result,
+Does function 'dfs_iterative' handle errors or edge cases effectively? Explain your reasoning.,intermediate,function,,,evaluate,,dfs_iterative
+Does the while loop on line 53 improve or hinder code readability? Explain.,intermediate,loop,while,53.0,evaluate,,
+Does the for loop on line 61 improve or hinder code readability? Explain.,intermediate,loop,for,61.0,evaluate,,

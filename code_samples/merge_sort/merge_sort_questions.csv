@@ -1,0 +1,7 @@
+question,difficulty,category,variable_name,bloom,function_name,loop_type,line_num
+Does the use of variable 'i' make the code more readable or less readable? Explain.,intermediate,variable,i,evaluate,,,
+How would you assess the maintainability of function 'merge_sort'?,intermediate,function,,evaluate,merge_sort,,
+Does the use of variable 'sorted_array' make the code more readable or less readable? Explain.,intermediate,variable,sorted_array,evaluate,,,
+Does the use of variable 'j' make the code more readable or less readable? Explain.,intermediate,variable,j,evaluate,,,
+Does the while loop on line 66 improve or hinder code readability? Explain.,intermediate,loop,,evaluate,,while,66.0
+Does the use of variable 'right_half' make the code more readable or less readable? Explain.,intermediate,variable,right_half,evaluate,,,

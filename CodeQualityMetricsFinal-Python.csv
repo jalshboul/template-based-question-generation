@@ -1,0 +1,115 @@
+Code,functions,loops,conditionals,variables,lines,complexity,GeneratedQuestions
+binary_search,1,1,1,1,16,Simple,"1. [beginner] What is the purpose of variable 'high'?
+2. [beginner] What is the initial value of 'low'?
+3. [intermediate] What is the expected output when this algorithm is executed with input [1, 2, 3, 4, 5], target=3?
+4. [intermediate] What is the termination condition for the while loop on line 6?
+5. [advanced] What is the space complexity of this algorithm? Justify your answer.
+6. [advanced] Could variable 'low' cause any memory-related issues? Explain."
+linear_search,1,1,1,0,7,Simple,"1. [beginner] How many times will the for loop on line 3 execute with typical input?
+2. [beginner] What is the purpose of the conditional statement on line 4?
+3. [intermediate] Is the function 'linear_search' recursive? Explain why or why not.
+4. [intermediate] Can the condition on line 4 be simplified? If so, how?
+5. [advanced] Could the conditional on line 4 introduce any potential bugs? Explain.
+6. [advanced] What is the time complexity of function 'linear_search'? Justify your answer."
+bubble_sort,1,1,1,1,9,Simple,"1. [beginner] What is the purpose of the conditional statement on line 6?
+2. [beginner] What is the purpose of variable 'n'?
+3. [intermediate] What is the value of 'n' after line 3?
+4. [intermediate] Can the condition on line 6 be simplified? If so, how?
+5. [advanced] Analyze the efficiency of the for loop on line 4. Can it be improved?
+6. [advanced] What would be the impact on performance if you unrolled the loop on line 4?"
+insertion_sort,1,1,0,1,11,Simple,"1. [beginner] What does the function 'insertion_sort' return?
+2. [beginner] What is the purpose of the while loop on line 6?
+3. [intermediate] What would happen if the loop on line 3 never terminates? How could you fix it?
+4. [intermediate] What is the termination condition for the while loop on line 6?
+5. [advanced] What is the time complexity of function 'insertion_sort'? Justify your answer.
+6. [advanced] How would you parallelize the loop on line 3 for better performance?"
+selection_sort,1,1,1,1,10,Simple,"1. [beginner] What is the purpose of the function 'selection_sort'?
+2. [beginner] What is the purpose of the conditional statement on line 6?
+3. [intermediate] Is the function 'selection_sort' recursive? Explain why or why not.
+4. [intermediate] What would happen if function 'selection_sort' received x as arguments?
+5. [advanced] What invariants are maintained throughout the execution of the loop on line 3?
+6. [advanced] What would be the impact on performance if you unrolled the loop on line 3?"
+merge_sort,1,1,1,1,33,Moderate,"1. [beginner] What is the data type of variable 'result'?
+2. [beginner] What is the purpose of the function 'merge'?
+3. [intermediate] What is the value of 'right' after line 9?
+4. [intermediate] What would happen if the loop on line 22 never terminates? How could you fix it?
+5. [advanced] Analyze the short-circuit evaluation in the condition on line 3. Does it affect performance?
+6. [advanced] Is the variable 'right' used optimally? Could its usage be improved?"
+quick_sort,1,1,1,1,22,Moderate,"1. [beginner] Under what condition(s) will the code block on line 3 execute?
+2. [beginner] What is the initial value of 'pivot'?
+3. [intermediate] Is there any redundancy in the conditional statement on line 3?
+4. [intermediate] What would happen if 'pivot' was not initialized?
+5. [advanced] How would you modify the conditional on line 3 to handle edge cases?
+6. [advanced] Could the conditional on line 3 introduce any potential bugs? Explain."
+dfs,1,1,1,1,13,Moderate,"1. [beginner] What is the purpose of the while loop on line 6?
+2. [beginner] Under what condition(s) will the code block on line 8 execute?
+3. [intermediate] What would happen if the loop on line 6 never terminates? How could you fix it?
+4. [intermediate] How many times is the variable 'vertex' modified in the code?
+5. [advanced] Is the variable 'visited' used optimally? Could its usage be improved?
+6. [advanced] What is the time complexity of function 'dfs'? Justify your answer."
+bfs,1,1,1,1,15,Moderate,"1. [beginner] What is the purpose of the while loop on line 7?
+2. [beginner] How many times will the while loop on line 7 execute with typical input?
+3. [intermediate] Could the variable 'visited' be declared with a different scope? What impact would that have?
+4. [intermediate] What would happen if function 'bfs' received x, x as arguments?
+5. [advanced] Analyze the efficiency of the while loop on line 7. Can it be improved?
+6. [advanced] Identify any potential issues with the way variable 'visited' is used in the code."
+dijkstra,1,1,1,1,23,Moderate,"1. [beginner] What is the purpose of the function 'dijkstra'?
+2. [beginner] What does the function 'dijkstra' return?
+3. [intermediate] How many times is the variable 'distances' modified in the code?
+4. [intermediate] What is the expected output when this algorithm is executed with input { 1: {2: 4, 3: 2}, 2: {3: 5, 4: 10}, 3: {4: 3}, 4: {} }?
+5. [advanced] What is the time complexity of function 'dijkstra'? Justify your answer.
+6. [advanced] How does the conditional on line 18 affect the program's control flow?"
+dynamic_programming,1,1,1,1,25,Moderate,"1. [beginner] What is the purpose of this algorithm?
+2. [beginner] How many times will the for loop on line 8 execute with typical input?
+3. [intermediate] What are the postconditions after function 'fibonacci_dp' completes execution?
+4. [intermediate] Is the function 'fibonacci_dp' recursive? Explain why or why not.
+5. [advanced] Identify any potential issues with the way variable 'n' is used in the code.
+6. [advanced] What are the trade-offs involved in using this algorithm versus alternatives?"
+greedy_algorithm,1,1,1,1,18,Moderate,"1. [beginner] What is the data type of variable 'selected'?
+2. [beginner] What is the purpose of variable 'n'?
+3. [intermediate] What is the value of 'activities' after line 5?
+4. [intermediate] What would happen if 'n' was not initialized?
+5. [advanced] What invariants are maintained throughout the execution of the loop on line 12?
+6. [advanced] Compare this algorithm with alternative approaches for solving the same problem."
+kmp_algorithm,1,1,1,1,49,Complex,"1. [beginner] Under what condition(s) will the code block on line 42 execute?
+2. [beginner] How many parameters does function 'compute_lps' accept?
+3. [intermediate] Could the variable 'm' be declared with a different scope? What impact would that have?
+4. [intermediate] What would happen if function 'compute_lps' received x as arguments?
+5. [advanced] How could you optimize function 'compute_lps' for better performance?
+6. [advanced] How would you parallelize the loop on line 9 for better performance?"
+kruskal_algorithm,1,1,1,1,29,Complex,"1. [beginner] What is the purpose of variable 'edges'?
+2. [beginner] What is the purpose of the function 'kruskal_mst'?
+3. [intermediate] Is the function 'find' recursive? Explain why or why not.
+4. [intermediate] Could the variable 'edges' be declared with a different scope? What impact would that have?
+5. [advanced] What is the time complexity of function 'kruskal_mst'? Justify your answer.
+6. [advanced] Identify any potential issues with the way variable 'parent' is used in the code."
+prim_algorithm,1,1,1,1,23,Complex,"1. [beginner] Under what condition(s) will the code block on line 19 execute?
+2. [beginner] What is the purpose of variable 'mst'?
+3. [intermediate] What would happen if 'mst' was not initialized?
+4. [intermediate] How many times is the variable 'start_vertex' modified in the code?
+5. [advanced] What is the time complexity of function 'prim_mst'? Justify your answer.
+6. [advanced] Is the variable 'mst' used optimally? Could its usage be improved?"
+floyd_warshall,1,1,1,1,19,Complex,"1. [beginner] What is the data type of variable 'n'?
+2. [beginner] What does the function 'floyd_warshall' return?
+3. [intermediate] Can the condition on line 9 be simplified? If so, how?
+4. [intermediate] What is the termination condition for the for loop on line 14?
+5. [advanced] Analyze the efficiency of the for loop on line 7. Can it be improved?
+6. [advanced] How would you parallelize the loop on line 13 for better performance?"
+topological_sort,1,1,1,1,31,Complex,"1. [beginner] Under what condition(s) will the code block on line 27 execute?
+2. [beginner] What is the purpose of variable 'visited'?
+3. [intermediate] What would happen if 'visited' was not initialized?
+4. [intermediate] What would happen if you reversed the condition on line 26?
+5. [advanced] Is the variable 'visited' used optimally? Could its usage be improved?
+6. [advanced] Is the variable 'temp' used optimally? Could its usage be improved?"
+a_star_search,1,1,1,1,42,Complex,"1. [beginner] Under what condition(s) will the code block on line 21 execute?
+2. [beginner] What happens in each iteration of the for loop on line 29?
+3. [intermediate] What would happen if you reversed the condition on line 21?
+4. [intermediate] How many times is the variable 'tentative_g_score' modified in the code?
+5. [advanced] Could the conditional on line 32 introduce any potential bugs? Explain.
+6. [advanced] Is the variable 'open_set' used optimally? Could its usage be improved?"
+huffman_coding,1,1,0,1,33,Complex,"1. [beginner] What is the purpose of variable 'priority_queue'?
+2. [beginner] What is the purpose of variable 'frequency'?
+3. [intermediate] What would happen if the loop on line 13 never terminates? How could you fix it?
+4. [intermediate] Is the function 'huffman_coding' recursive? Explain why or why not.
+5. [advanced] Could variable 'frequency' cause any memory-related issues? Explain.
+6. [advanced] What is the time complexity of function 'huffman_coding'? Justify your answer."
