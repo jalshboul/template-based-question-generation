@@ -12,7 +12,7 @@ This repository contains the implementation for a research project on template-b
 ## Directory Structure
 ```
 .
-├── MultilingualCodeQGGPT4.1.py         # Main question generator
+├── MultiProgrammingCodeQG.py         # Main question generator
 ├── regenerate_all_questions.py         # Script to regenerate all question files
 ├── bloom_distribution_analysis.py      # Bloom’s level analysis script
 ├── EvaluationCodeComplete.py           # Evaluation and plotting script
@@ -48,7 +48,7 @@ This repository contains the implementation for a research project on template-b
 - **Generate Questions:**
   Run the main script to generate questions for a code sample:
   ```sh
-  python MultilingualCodeQGGPT4.1.py
+  python MultiProgrammingCodeQG.py
   ```
 - **Regenerate All Questions:**
   ```sh

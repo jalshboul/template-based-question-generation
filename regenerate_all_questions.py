@@ -4,7 +4,7 @@ import importlib.util
 
 # Path to your main generation script and class
 
-GEN_SCRIPT = 'MultilingualCodeQGGPT4.1.py'
+GEN_SCRIPT = 'MultiProgrammingCodeQG.py'
 CLASS_NAME = 'MultiLanguageQuestionGenerator'
 
 # Dynamically import the main class

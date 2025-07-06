@@ -1245,12 +1245,13 @@ class MultiLanguageQuestionGenerator:
             [DifficultyLevel.INTERMEDIATE] * num_intermediate +
             [DifficultyLevel.ADVANCED] * num_advanced
         )
+        num_questions = len(slot_difficulties)
         all_questions = (
             self.generate_questions(code, num_beginner, DifficultyLevel.BEGINNER)
             + self.generate_questions(code, num_intermediate, DifficultyLevel.INTERMEDIATE)
             + self.generate_questions(code, num_advanced, DifficultyLevel.ADVANCED)
         )
-        return self._enforce_bloom_distribution(all_questions, slot_difficulties)
+        return self._enforce_bloom_distribution(all_questions, num_questions)
     
     def generate_quiz(self, code: str, num_questions: int = 5, mixed_difficulty: bool = True) -> Dict[str, Any]:
         """Generate a complete quiz for the given code, always 1 remember and rest evaluate, correct difficulty fields."""
