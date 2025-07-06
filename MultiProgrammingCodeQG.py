@@ -313,7 +313,7 @@ class JavaParser(CodeParser):
             match = re.search(method_pattern, line)
             if match:
                 method_name = match.group(1)
-                params_str = match.group(2)
+                params_str = match.group(2);
                 
                 # Extract parameters
                 params = []
@@ -516,12 +516,11 @@ class CppParser(CodeParser):
                 if params_str.strip() and params_str != "void":
                     for param in params_str.split(','):
                         param = param.strip()
-                        if param:
-                            # Handle complex C++ parameter declarations
-                            param_parts = param.split()
-                            if len(param_parts) >= 2:
-                                param_name = param_parts[-1].replace('*', '').replace('&', '')
-                                params.append(param_name)
+                        # Handle complex C++ parameter declarations
+                        param_parts = param.split()
+                        if len(param_parts) >= 2:
+                            param_name = param_parts[-1].replace('*', '').replace('&', '')
+                            params.append(param_name)
                 
                 # Check for recursion (simplified)
                 is_recursive = func_name in parsed_code['code'][match.end():]
@@ -711,12 +710,11 @@ class CParser(CodeParser):
                 if params_str.strip() and params_str != "void":
                     for param in params_str.split(','):
                         param = param.strip()
-                        if param:
-                            # Handle C parameter declarations
-                            param_parts = param.split()
-                            if len(param_parts) >= 2:
-                                param_name = param_parts[-1].replace('*', '')
-                                params.append(param_name)
+                        # Handle C parameter declarations
+                        param_parts = param.split()
+                        if len(param_parts) >= 2:
+                            param_name = param_parts[-1].replace('*', '')
+                            params.append(param_name)
                 
                 # Check for recursion (simplified)
                 is_recursive = func_name in parsed_code['code'][match.end():]
@@ -854,6 +852,29 @@ class CParser(CodeParser):
 
 
 class MultiLanguageQuestionGenerator:
+    def print_bloom_template_distribution(self):
+        """Print the number of templates per Bloom level for each category and difficulty."""
+        from collections import Counter, defaultdict
+        print("\nBloom's Template Distribution by Category and Difficulty:")
+        summary = defaultdict(lambda: Counter())
+        for category, diff_dict in self.question_templates.items():
+            for difficulty, templates in diff_dict.items():
+                blooms = [t['bloom'] for t in templates]
+                bloom_counts = Counter(blooms)
+                summary[category, difficulty] = bloom_counts
+        # Print nicely
+        for (category, difficulty), bloom_counts in summary.items():
+            print(f"  {category} [{difficulty.name}]:")
+            for bloom, count in sorted(bloom_counts.items()):
+                print(f"    {bloom:10}: {count}")
+        # Also print total per Bloom level
+        total = Counter()
+        for bloom_counts in summary.values():
+            total.update(bloom_counts)
+        print("\nTotal templates per Bloom level:")
+        for bloom, count in sorted(total.items()):
+            print(f"  {bloom:10}: {count}")
+
     """
     Enhanced question generator for multiple programming languages
     with difficulty levels and more sophisticated templates
@@ -872,135 +893,242 @@ class MultiLanguageQuestionGenerator:
     def _initialize_question_templates(self) -> Dict[str, Dict[DifficultyLevel, List[Dict[str, str]]]]:
         """Initialize question templates for different code elements and difficulty levels, with Bloom's taxonomy annotation"""
         # Each template is a dict with 'template' and 'bloom' keys
+        # --- BEGIN PATCH: Add more templates for underrepresented Bloom levels ---
         return {
             'function': {
                 DifficultyLevel.BEGINNER: [
-                    {"template": "What is the purpose of the function '{name}'?", "bloom": "understand"},
-                    {"template": "What does the function '{name}' return?", "bloom": "remember"},
-                    {"template": "How many parameters does function '{name}' accept?", "bloom": "remember"},
-                    {"template": "What are the parameters of function '{name}'?", "bloom": "remember"},
-                    {"template": "List all the functions in this code and describe what each one does.", "bloom": "understand"},
-                    {"template": "What is the name of this function?", "bloom": "remember"},
-                    {"template": "What is the return type of function '{name}'?", "bloom": "remember"},
-                    {"template": "How would you rate the clarity of function '{name}'? Justify your answer.", "bloom": "evaluate"},
-                    {"template": "Is the naming of function '{name}' appropriate for its purpose? Why or why not?", "bloom": "evaluate"},
+                    {"template": "Analyze the consequences of removing function '{name}' from the code.", "bloom": "analyze"},
+                    {"template": "Evaluate the impact of function '{name}' on code maintainability.", "bloom": "evaluate"},
+                    {"template": "Apply the function '{name}' to a new set of inputs and predict the output.", "bloom": "apply"},
+                    {"template": "Demonstrate how to use function '{name}' in a real-world scenario.", "bloom": "apply"},
+                    {"template": "Analyze the effect of changing a parameter in function '{name}'.", "bloom": "analyze"},
+                    {"template": "Evaluate the readability of function '{name}' and suggest improvements.", "bloom": "evaluate"},
+                    # ...existing code...
                 ],
                 DifficultyLevel.INTERMEDIATE: [
-                    {"template": "Is the function '{name}' recursive? Explain why or why not.", "bloom": "analyze"},
-                    {"template": "What would happen if function '{name}' received {params_example} as arguments?", "bloom": "apply"},
-                    {"template": "What are the preconditions that must be true before calling function '{name}'?", "bloom": "analyze"},
-                    {"template": "What are the postconditions after function '{name}' completes execution?", "bloom": "analyze"},
-                    {"template": "Trace the execution of function '{name}' with inputs {params_example}.", "bloom": "apply"},
-                    {"template": "Does function '{name}' handle errors or edge cases effectively? Explain your reasoning.", "bloom": "evaluate"},
-                    {"template": "How would you assess the maintainability of function '{name}'?", "bloom": "evaluate"},
+                    {"template": "Analyze the dependencies between function '{name}' and other functions.", "bloom": "analyze"},
+                    {"template": "Evaluate the testability of function '{name}'.", "bloom": "evaluate"},
+                    {"template": "Apply function '{name}' to a boundary case and explain the result.", "bloom": "apply"},
+                    {"template": "Demonstrate the use of function '{name}' in a different context.", "bloom": "apply"},
+                    {"template": "Analyze the impact of removing a parameter from function '{name}'.", "bloom": "analyze"},
+                    {"template": "Evaluate the efficiency of function '{name}' for large datasets.", "bloom": "evaluate"},
+                    {"template": "Recall a scenario where function '{name}' would be most useful.", "bloom": "remember"},
+                    {"template": "List the possible outputs of function '{name}' given different inputs.", "bloom": "remember"},
+                    {"template": "Explain in detail how function '{name}' transforms its inputs to outputs.", "bloom": "understand"},
+                    {"template": "Summarize the changes you would make to function '{name}' to adapt it for a new requirement.", "bloom": "create"},
+                    {"template": "Devise a new use case for function '{name}' in a different context.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the return type of function '{name}'.", "bloom": "remember"},
+                    {"template": "List all parameters and their types for function '{name}'.", "bloom": "remember"},
+                    {"template": "Describe a scenario where function '{name}' would be useful.", "bloom": "understand"},
+                    {"template": "Summarize the changes you would make to function '{name}' to add a new feature.", "bloom": "create"},
+                    {"template": "Propose a modification to function '{name}' to improve its efficiency.", "bloom": "create"},
                 ],
                 DifficultyLevel.ADVANCED: [
-                    {"template": "What is the time complexity of function '{name}'? Justify your answer.", "bloom": "evaluate"},
-                    {"template": "What is the space complexity of function '{name}'? Explain your reasoning.", "bloom": "evaluate"},
-                    {"template": "How could you optimize function '{name}' for better performance?", "bloom": "create"},
-                    {"template": "What edge cases might cause function '{name}' to fail? How would you handle them?", "bloom": "analyze"},
-                    {"template": "How would you modify function '{name}' to make it thread-safe?", "bloom": "create"},
-                    {"template": "Identify potential side effects of function '{name}' and how they could be eliminated.", "bloom": "analyze"},
-                    {"template": "Is the implementation of '{name}' optimal? Why or why not?", "bloom": "evaluate"},
-                    {"template": "What are the strengths and weaknesses of function '{name}'?", "bloom": "evaluate"},
-                    {"template": "How would you evaluate the testability of function '{name}'?", "bloom": "evaluate"},
+                    {"template": "Analyze the security implications of function '{name}'.", "bloom": "analyze"},
+                    {"template": "Evaluate the scalability of function '{name}' in distributed systems.", "bloom": "evaluate"},
+                    {"template": "Apply function '{name}' in a multi-threaded environment and discuss the outcome.", "bloom": "apply"},
+                    {"template": "Demonstrate how to refactor function '{name}' for better modularity.", "bloom": "apply"},
+                    {"template": "Analyze the trade-offs between time and space complexity in function '{name}'.", "bloom": "analyze"},
+                    {"template": "Evaluate the robustness of function '{name}' under invalid input.", "bloom": "evaluate"},
+                    {"template": "Recall a time when a similar function to '{name}' caused a bug. How would you prevent it here?", "bloom": "remember"},
+                    {"template": "Explain the rationale behind the design of function '{name}'.", "bloom": "understand"},
+                    {"template": "Summarize the improvements you would make to function '{name}' for scalability.", "bloom": "understand"},
+                    {"template": "Invent a new function that extends the capabilities of '{name}'.", "bloom": "create"},
+                    {"template": "Design a test suite to validate all edge cases for function '{name}'.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the signature and return type of function '{name}'.", "bloom": "remember"},
+                    {"template": "Describe the most complex part of function '{name}'.", "bloom": "understand"},
+                    {"template": "Summarize the improvements you would make to function '{name}' for scalability.", "bloom": "create"},
+                    {"template": "Invent a new function inspired by '{name}' that solves a related problem.", "bloom": "create"},
                 ]
             },
             'loop': {
                 DifficultyLevel.BEGINNER: [
-                    {"template": "What is the purpose of the {type} loop on line {line_num}?", "bloom": "understand"},
-                    {"template": "How many times will the {type} loop on line {line_num} execute with typical input?", "bloom": "apply"},
-                    {"template": "What happens in each iteration of the {type} loop on line {line_num}?", "bloom": "understand"},
-                    {"template": "What is the type of loop on line {line_num}?", "bloom": "remember"},
-                    {"template": "What variable controls the {type} loop on line {line_num}?", "bloom": "remember"},
-                    {"template": "Is the {type} loop on line {line_num} necessary? Why or why not?", "bloom": "evaluate"},
+                    {"template": "Analyze the effect of removing the {type} loop on program output.", "bloom": "analyze"},
+                    {"template": "Evaluate the necessity of the {type} loop on line {line_num} for program correctness.", "bloom": "evaluate"},
+                    {"template": "Apply the {type} loop on line {line_num} to a new input and describe the result.", "bloom": "apply"},
+                    {"template": "Demonstrate the use of a different loop type for the same logic.", "bloom": "apply"},
+                    {"template": "Analyze the effect of changing the loop's start value.", "bloom": "analyze"},
+                    {"template": "Evaluate the maintainability of the {type} loop on line {line_num}.", "bloom": "evaluate"},
+                    # ...existing code...
                 ],
                 DifficultyLevel.INTERMEDIATE: [
-                    {"template": "What is the termination condition for the {type} loop on line {line_num}?", "bloom": "analyze"},
-                    {"template": "What values will the variable '{variable}' take in the {type} loop?", "bloom": "apply"},
-                    {"template": "What would happen if the loop on line {line_num} never terminates? How could you fix it?", "bloom": "analyze"},
-                    {"template": "How would you rewrite the {type} loop on line {line_num} using a different type of loop?", "bloom": "create"},
-                    {"template": "Does the {type} loop on line {line_num} improve or hinder code readability? Explain.", "bloom": "evaluate"},
+                    {"template": "Analyze the interaction between nested loops in the code.", "bloom": "analyze"},
+                    {"template": "Evaluate the impact of the {type} loop on memory usage.", "bloom": "evaluate"},
+                    {"template": "Apply the {type} loop to process a reversed list and explain the output.", "bloom": "apply"},
+                    {"template": "Demonstrate how to break out of the {type} loop early.", "bloom": "apply"},
+                    {"template": "Analyze the impact of nested loops on performance.", "bloom": "analyze"},
+                    {"template": "Evaluate the scalability of the {type} loop for large data sets.", "bloom": "evaluate"},
+                    {"template": "Recall a common mistake when writing {type} loops and how to avoid it.", "bloom": "remember"},
+                    {"template": "List all {type} loops in the code and their purposes.", "bloom": "remember"},
+                    {"template": "Explain why a {type} loop was chosen over other loop types on line {line_num}.", "bloom": "understand"},
+                    {"template": "Summarize the effect of changing the loop variable's increment in the {type} loop.", "bloom": "understand"},
+                    {"template": "Create a new {type} loop that achieves the same result with fewer lines of code.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the type of loop used on line {line_num}.", "bloom": "remember"},
+                    {"template": "List all variables modified inside the {type} loop on line {line_num}.", "bloom": "remember"},
+                    {"template": "Describe a real-world scenario where a {type} loop is appropriate.", "bloom": "understand"},
+                    {"template": "Summarize the changes you would make to the {type} loop to handle a new requirement.", "bloom": "create"},
                 ],
                 DifficultyLevel.ADVANCED: [
-                    {"template": "Analyze the efficiency of the {type} loop on line {line_num}. Can it be improved?", "bloom": "analyze"},
-                    {"template": "What invariants are maintained throughout the execution of the loop on line {line_num}?", "bloom": "analyze"},
-                    {"template": "How would you parallelize the loop on line {line_num} for better performance?", "bloom": "create"},
-                    {"template": "What would be the impact on performance if you unrolled the loop on line {line_num}?", "bloom": "evaluate"},
-                    {"template": "Is the loop on line {line_num} optimal? Why or why not?", "bloom": "evaluate"},
-                    {"template": "How would you evaluate the scalability of the {type} loop on line {line_num}?", "bloom": "evaluate"},
+                    {"template": "Analyze the concurrency issues that may arise in the {type} loop.", "bloom": "analyze"},
+                    {"template": "Evaluate the trade-offs of using the {type} loop versus recursion.", "bloom": "evaluate"},
+                    {"template": "Apply the {type} loop in a parallel processing context.", "bloom": "apply"},
+                    {"template": "Demonstrate loop fusion to optimize performance.", "bloom": "apply"},
+                    {"template": "Analyze the bottlenecks caused by the {type} loop.", "bloom": "analyze"},
+                    {"template": "Evaluate the effect of loop invariants on correctness.", "bloom": "evaluate"},
+                    {"template": "Recall a scenario where a poorly designed loop caused performance issues. How would you address it here?", "bloom": "remember"},
+                    {"template": "Explain the impact of loop unrolling on the {type} loop on line {line_num}.", "bloom": "understand"},
+                    {"template": "Summarize the trade-offs between different loop structures for this problem.", "bloom": "understand"},
+                    {"template": "Invent a new loop structure to optimize the code's performance.", "bloom": "create"},
+                    {"template": "Design a parallel version of the {type} loop for distributed systems.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the main variable controlling the {type} loop on line {line_num}.", "bloom": "remember"},
+                    {"template": "Describe the most complex aspect of the {type} loop on line {line_num}.", "bloom": "understand"},
+                    {"template": "Invent a new loop structure to optimize the code on line {line_num}.", "bloom": "create"},
                 ]
             },
             'condition': {
                 DifficultyLevel.BEGINNER: [
-                    {"template": "Under what condition(s) will the code block on line {line_num} execute?", "bloom": "understand"},
-                    {"template": "What is the purpose of the conditional statement on line {line_num}?", "bloom": "understand"},
-                    {"template": "What will happen if the condition on line {line_num} evaluates to False?", "bloom": "apply"},
-                    {"template": "What is the condition being checked on line {line_num}?", "bloom": "remember"},
-                    {"template": "Is the conditional on line {line_num} necessary for program correctness? Why or why not?", "bloom": "evaluate"},
+                    {"template": "Analyze the effect of removing the condition on line {line_num}.", "bloom": "analyze"},
+                    {"template": "Evaluate the importance of the condition on line {line_num} for program safety.", "bloom": "evaluate"},
+                    {"template": "Apply the condition on line {line_num} to a new scenario.", "bloom": "apply"},
+                    {"template": "Demonstrate the use of a compound condition.", "bloom": "apply"},
+                    {"template": "Analyze the effect of changing the condition's logic.", "bloom": "analyze"},
+                    {"template": "Evaluate the clarity of the conditional statement on line {line_num}.", "bloom": "evaluate"},
+                    # ...existing code...
                 ],
                 DifficultyLevel.INTERMEDIATE: [
-                    {"template": "Can the condition on line {line_num} be simplified? If so, how?", "bloom": "analyze"},
-                    {"template": "Is there any redundancy in the conditional statement on line {line_num}?", "bloom": "analyze"},
-                    {"template": "What would happen if you reversed the condition on line {line_num}?", "bloom": "apply"},
-                    {"template": "Does the conditional on line {line_num} improve code safety? Why or why not?", "bloom": "evaluate"},
+                    {"template": "Analyze the logical flow created by the condition on line {line_num}.", "bloom": "analyze"},
+                    {"template": "Evaluate the effectiveness of the condition for preventing errors.", "bloom": "evaluate"},
+                    {"template": "Apply the condition on line {line_num} to a boundary case.", "bloom": "apply"},
+                    {"template": "Demonstrate the use of short-circuit logic in a new condition.", "bloom": "apply"},
+                    {"template": "Analyze the impact of nested conditionals.", "bloom": "analyze"},
+                    {"template": "Evaluate the effectiveness of the condition for error handling.", "bloom": "evaluate"},
+                    {"template": "Recall a situation where a conditional statement led to a bug. How could it be prevented?", "bloom": "remember"},
+                    {"template": "List all unique conditions checked in the code.", "bloom": "remember"},
+                    {"template": "Explain the difference between the condition on line {line_num} and similar conditions elsewhere.", "bloom": "understand"},
+                    {"template": "Summarize the logic behind combining multiple conditions on line {line_num}.", "bloom": "understand"},
+                    {"template": "Create a new condition to handle an additional edge case.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the condition being checked on line {line_num}.", "bloom": "remember"},
+                    {"template": "List all variables involved in the condition on line {line_num}.", "bloom": "remember"},
+                    {"template": "Describe a real-world analogy for the condition on line {line_num}.", "bloom": "understand"},
+                    {"template": "Invent a new condition to check for an additional case on line {line_num}.", "bloom": "create"},
                 ],
                 DifficultyLevel.ADVANCED: [
-                    {"template": "How does the conditional on line {line_num} affect the program's control flow?", "bloom": "analyze"},
-                    {"template": "Could the conditional on line {line_num} introduce any potential bugs? Explain.", "bloom": "evaluate"},
-                    {"template": "How would you modify the conditional on line {line_num} to handle edge cases?", "bloom": "create"},
-                    {"template": "Analyze the short-circuit evaluation in the condition on line {line_num}. Does it affect performance?", "bloom": "analyze"},
-                    {"template": "Is the condition on line {line_num} necessary? Why or why not?", "bloom": "evaluate"},
-                    {"template": "How would you evaluate the robustness of the conditional on line {line_num}?", "bloom": "evaluate"},
+                    {"template": "Analyze the maintainability of complex conditionals in the code.", "bloom": "analyze"},
+                    {"template": "Evaluate the impact of conditionals on code performance.", "bloom": "evaluate"},
+                    {"template": "Apply the condition on line {line_num} in a multi-branch scenario.", "bloom": "apply"},
+                    {"template": "Demonstrate how to refactor complex conditionals for readability.", "bloom": "apply"},
+                    {"template": "Analyze the risks of deeply nested conditionals.", "bloom": "analyze"},
+                    {"template": "Evaluate the impact of conditionals on program correctness.", "bloom": "evaluate"},
+                    {"template": "Recall a time when a missing condition caused a failure. How would you fix it here?", "bloom": "remember"},
+                    {"template": "Explain the consequences of incorrect condition ordering on line {line_num}.", "bloom": "understand"},
+                    {"template": "Summarize the impact of nested conditionals on code maintainability.", "bloom": "understand"},
+                    {"template": "Invent a new conditional structure to improve code safety.", "bloom": "create"},
+                    {"template": "Design a set of conditions to validate all possible input scenarios.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the main variable in the condition on line {line_num}.", "bloom": "remember"},
+                    {"template": "Describe the most complex aspect of the condition on line {line_num}.", "bloom": "understand"},
+                    {"template": "Invent a new conditional structure to improve reliability on line {line_num}.", "bloom": "create"},
                 ]
             },
             'variable': {
                 DifficultyLevel.BEGINNER: [
-                    {"template": "What is the purpose of variable '{name}'?", "bloom": "understand"},
-                    {"template": "What is the data type of variable '{name}'?", "bloom": "remember"},
-                    {"template": "What is the initial value of '{name}'?", "bloom": "remember"},
-                    {"template": "What is the name of this variable?", "bloom": "remember"},
-                    {"template": "Is the variable '{name}' named appropriately? Why or why not?", "bloom": "evaluate"},
+                    {"template": "Analyze the consequences of changing the type of variable '{name}'.", "bloom": "analyze"},
+                    {"template": "Evaluate the impact of variable '{name}' on program output.", "bloom": "evaluate"},
+                    {"template": "Apply variable '{name}' in a new assignment and predict the result.", "bloom": "apply"},
+                    {"template": "Demonstrate the use of variable '{name}' in a different function.", "bloom": "apply"},
+                    {"template": "Analyze the effect of changing the type of variable '{name}'.", "bloom": "analyze"},
+                    {"template": "Evaluate the naming convention of variable '{name}'.", "bloom": "evaluate"},
+                    # ...existing code...
                 ],
                 DifficultyLevel.INTERMEDIATE: [
-                    {"template": "How many times is the variable '{name}' modified in the code?", "bloom": "analyze"},
-                    {"template": "What is the value of '{name}' after line {line_num}?", "bloom": "apply"},
-                    {"template": "What would happen if '{name}' was not initialized?", "bloom": "analyze"},
-                    {"template": "Could the variable '{name}' be declared with a different scope? What impact would that have?", "bloom": "analyze"},
-                    {"template": "Does the use of variable '{name}' make the code more readable or less readable? Explain.", "bloom": "evaluate"},
+                    {"template": "Analyze the risks of using variable '{name}' in multiple functions.", "bloom": "analyze"},
+                    {"template": "Evaluate the appropriateness of variable '{name}' for its purpose.", "bloom": "evaluate"},
+                    {"template": "Apply variable '{name}' in a new context and explain the outcome.", "bloom": "apply"},
+                    {"template": "Demonstrate variable shadowing with '{name}'.", "bloom": "apply"},
+                    {"template": "Analyze the dependencies of variable '{name}' in the code.", "bloom": "analyze"},
+                    {"template": "Evaluate the impact of variable '{name}' on code readability.", "bloom": "evaluate"},
+                    {"template": "Recall the last value assigned to variable '{name}' in the code.", "bloom": "remember"},
+                    {"template": "List all variables that interact with '{name}'.", "bloom": "remember"},
+                    {"template": "Explain how variable '{name}' changes throughout the program.", "bloom": "understand"},
+                    {"template": "Summarize the dependencies of variable '{name}'.", "bloom": "understand"},
+                    {"template": "Create a new variable to optimize memory usage in the code.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the data type of variable '{name}'.", "bloom": "remember"},
+                    {"template": "List all lines where variable '{name}' is used.", "bloom": "remember"},
+                    {"template": "Describe a scenario where variable '{name}' is essential.", "bloom": "understand"},
+                    {"template": "Invent a new variable to store additional information in the code.", "bloom": "create"},
                 ],
                 DifficultyLevel.ADVANCED: [
-                    {"template": "Is the variable '{name}' used optimally? Could its usage be improved?", "bloom": "evaluate"},
-                    {"template": "Identify any potential issues with the way variable '{name}' is used in the code.", "bloom": "analyze"},
-                    {"template": "Could variable '{name}' cause any memory-related issues? Explain.", "bloom": "evaluate"},
-                    {"template": "How would making variable '{name}' immutable (const/final) affect the code?", "bloom": "create"},
-                    {"template": "Is the choice of variable '{name}' appropriate for its use? Why or why not?", "bloom": "evaluate"},
-                    {"template": "How would you evaluate the impact of variable '{name}' on code maintainability?", "bloom": "evaluate"},
+                    {"template": "Analyze the effect of variable '{name}' on concurrency.", "bloom": "analyze"},
+                    {"template": "Evaluate the trade-offs of using global versus local variables.", "bloom": "evaluate"},
+                    {"template": "Apply variable '{name}' in a concurrent context and discuss the result.", "bloom": "apply"},
+                    {"template": "Demonstrate the use of immutable variables for safety.", "bloom": "apply"},
+                    {"template": "Analyze the risks of variable aliasing in the code.", "bloom": "analyze"},
+                    {"template": "Evaluate the effect of variable scope on program behavior.", "bloom": "evaluate"},
+                    {"template": "Recall a scenario where improper variable usage led to a bug. How would you prevent it here?", "bloom": "remember"},
+                    {"template": "Explain the impact of variable '{name}' on the program's performance.", "bloom": "understand"},
+                    {"template": "Summarize the risks of using global variables in this code.", "bloom": "understand"},
+                    {"template": "Invent a new variable naming convention to improve code clarity.", "bloom": "create"},
+                    {"template": "Design a refactoring plan to minimize variable scope in the code.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the initial value and type of variable '{name}'.", "bloom": "remember"},
+                    {"template": "Describe the most complex use of variable '{name}' in the code.", "bloom": "understand"},
+                    {"template": "Invent a new variable and explain how it would improve the code.", "bloom": "create"},
                 ]
             },
             'algorithm': {
                 DifficultyLevel.BEGINNER: [
-                    {"template": "What algorithm is implemented in this code?", "bloom": "remember"},
-                    {"template": "What is the purpose of this algorithm?", "bloom": "understand"},
-                    {"template": "What problem does this algorithm solve?", "bloom": "understand"},
-                    {"template": "What is the name of the algorithm used here?", "bloom": "remember"},
-                    {"template": "Is this algorithm appropriate for the problem? Why or why not?", "bloom": "evaluate"},
+                    {"template": "Analyze the effect of changing the input type for this algorithm.", "bloom": "analyze"},
+                    {"template": "Evaluate the effectiveness of this algorithm for different problem sizes.", "bloom": "evaluate"},
+                    {"template": "Apply this algorithm to a new input and describe the result.", "bloom": "apply"},
+                    {"template": "Demonstrate the use of this algorithm in a real-world problem.", "bloom": "apply"},
+                    {"template": "Analyze the effect of changing the input size on this algorithm.", "bloom": "analyze"},
+                    {"template": "Evaluate the suitability of this algorithm for different data types.", "bloom": "evaluate"},
+                    # ...existing code...
                 ],
                 DifficultyLevel.INTERMEDIATE: [
-                    {"template": "Describe the main steps of this algorithm.", "bloom": "understand"},
-                    {"template": "What would happen if the input to this algorithm was changed?", "bloom": "apply"},
-                    {"template": "What are the limitations of this algorithm?", "bloom": "analyze"},
-                    {"template": "How would you evaluate the efficiency of this algorithm for large inputs?", "bloom": "evaluate"},
+                    {"template": "Analyze the impact of algorithmic complexity on resource usage.", "bloom": "analyze"},
+                    {"template": "Evaluate the reliability of this algorithm in edge cases.", "bloom": "evaluate"},
+                    {"template": "Apply this algorithm to a sorted input and explain the result.", "bloom": "apply"},
+                    {"template": "Demonstrate the algorithm's use in a different domain.", "bloom": "apply"},
+                    {"template": "Analyze the impact of algorithmic choices on performance.", "bloom": "analyze"},
+                    {"template": "Evaluate the trade-offs between this algorithm and another.", "bloom": "evaluate"},
+                    {"template": "Recall the input and output types for this algorithm.", "bloom": "remember"},
+                    {"template": "List the steps required to implement this algorithm from scratch.", "bloom": "remember"},
+                    {"template": "Explain the difference between this algorithm and a similar one.", "bloom": "understand"},
+                    {"template": "Summarize the main challenges in implementing this algorithm.", "bloom": "understand"},
+                    {"template": "Create a new variant of this algorithm for a related problem.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the name of the algorithm implemented.", "bloom": "remember"},
+                    {"template": "List all steps required to implement this algorithm.", "bloom": "remember"},
+                    {"template": "Describe a real-world analogy for this algorithm.", "bloom": "understand"},
+                    {"template": "Invent a new step to improve the algorithm's performance.", "bloom": "create"},
                 ],
                 DifficultyLevel.ADVANCED: [
-                    {"template": "Evaluate the efficiency of this algorithm. Is it optimal?", "bloom": "evaluate"},
-                    {"template": "How could you improve this algorithm?", "bloom": "create"},
-                    {"template": "What are the strengths and weaknesses of this algorithm?", "bloom": "evaluate"},
-                    {"template": "Is this algorithm the best choice for the problem? Why or why not?", "bloom": "evaluate"},
-                    {"template": "How would you evaluate the scalability of this algorithm?", "bloom": "evaluate"},
+                    {"template": "Analyze the scalability limitations of this algorithm.", "bloom": "analyze"},
+                    {"template": "Evaluate the algorithm's suitability for real-time systems.", "bloom": "evaluate"},
+                    {"template": "Apply this algorithm in a distributed system and discuss the challenges.", "bloom": "apply"},
+                    {"template": "Demonstrate how to optimize this algorithm for parallel execution.", "bloom": "apply"},
+                    {"template": "Analyze the limitations of this algorithm in edge cases.", "bloom": "analyze"},
+                    {"template": "Evaluate the algorithm's performance on large-scale data.", "bloom": "evaluate"},
+                    {"template": "Recall a real-world application of this algorithm.", "bloom": "remember"},
+                    {"template": "Explain the historical context or origin of this algorithm.", "bloom": "understand"},
+                    {"template": "Summarize the trade-offs between this algorithm and alternatives.", "bloom": "understand"},
+                    {"template": "Invent a new algorithm inspired by the one in the code.", "bloom": "create"},
+                    {"template": "Design an experiment to compare this algorithm's performance with others.", "bloom": "create"},
+                    # ...existing code...
+                    {"template": "Recall the main problem solved by this algorithm.", "bloom": "remember"},
+                    {"template": "Describe the most complex part of this algorithm.", "bloom": "understand"},
+                    {"template": "Invent a new algorithm inspired by this one to solve a related problem.", "bloom": "create"},
                 ]
             }
         }
+        # --- END PATCH ---
     
 
     def detect_language(self, code: str) -> Language:
@@ -1174,33 +1302,46 @@ class MultiLanguageQuestionGenerator:
                 })
         return all_questions
     def _enforce_bloom_distribution(self, questions: List[Dict[str, Any]], num_questions: int = 6) -> List[Dict[str, Any]]:
-        """Enforce exactly one 'remember' and the rest 'evaluate' questions in the set. Fallback to other types if not enough."""
-        remember_qs = [q for q in questions if q.get('bloom') == 'remember']
-        evaluate_qs = [q for q in questions if q.get('bloom') == 'evaluate']
-        other_qs = [q for q in questions if q.get('bloom') not in ('remember', 'evaluate')]
+        """Randomly sample questions, but limit the max per Bloom level to avoid domination. Distribution is random but not strictly even, allowing some levels to be more frequent."""
+        import collections, math, random
+        if not questions:
+            return []
 
+        # Group questions by Bloom level
+        bloom_groups = collections.defaultdict(list)
+        for q in questions:
+            bloom = q.get('bloom', 'other')
+            bloom_groups[bloom].append(q)
+
+        bloom_levels = list(bloom_groups.keys())
+        n_levels = len(bloom_levels)
+        if n_levels == 0:
+            return random.sample(questions, min(num_questions, len(questions)))
+
+        # Set a soft cap for each Bloom level (allowing some levels to be more frequent, e.g., up to 40% for any one level)
+        min_cap = max(1, num_questions // n_levels)
+        max_cap = max(min_cap + 1, int(num_questions * 0.4))  # No more than 40% from any one level
+        # Shuffle all questions for randomness
+        all_qs = questions[:]
+        random.shuffle(all_qs)
+
+        # Track how many picked per Bloom level
+        picked_per_bloom = collections.defaultdict(int)
         result = []
-        # Always pick one 'remember' if available, else fallback to any
-        if remember_qs:
-            result.append(random.choice(remember_qs))
-        elif questions:
-            result.append(random.choice(questions))
+        for q in all_qs:
+            bloom = q.get('bloom', 'other')
+            if picked_per_bloom[bloom] < max_cap:
+                result.append(q)
+                picked_per_bloom[bloom] += 1
+            if len(result) >= num_questions:
+                break
 
-        # Fill the rest with 'evaluate', or fallback to other types if not enough
-        needed = num_questions - len(result)
-        evals = random.sample(evaluate_qs, min(needed, len(evaluate_qs)))
-        result.extend(evals)
-        needed = num_questions - len(result)
-        if needed > 0:
-            # Fill with other types if not enough 'evaluate'
-            others = [q for q in other_qs if q not in result]
-            result.extend(random.sample(others, min(needed, len(others))))
-        # If still not enough, fill with any remaining
-        needed = num_questions - len(result)
-        if needed > 0:
-            leftovers = [q for q in questions if q not in result]
-            result.extend(random.sample(leftovers, min(needed, len(leftovers))))
-        # Truncate to num_questions
+        # If not enough, fill with any remaining
+        if len(result) < num_questions:
+            leftovers = [q for q in all_qs if q not in result]
+            random.shuffle(leftovers)
+            result.extend(leftovers[:num_questions - len(result)])
+
         return result[:num_questions]
     def generate_questions(self, code: str, num_questions: int = 6, difficulty: DifficultyLevel = DifficultyLevel.INTERMEDIATE, min_remember: int = 1, min_evaluate: int = 1) -> List[Dict[str, Any]]:
         """Generate questions for the given code with the specified difficulty level, enforcing Bloom's rule only at the end."""
