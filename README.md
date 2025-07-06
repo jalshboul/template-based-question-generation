@@ -74,10 +74,10 @@ See the `code_samples/` directory for example code files and their generated que
 ## Citing This Work
 If you use this code for research, please cite our paper:
 ```
-@inproceedings{your2025paper,
+@article{alshboul2025template,
   title={Template-Based Automatic Question Generation from Program Codes using Static Code Analysis},
-  author={Your Name and Collaborators},
-  booktitle={Conference Name},
+  author={Jawad Alshboul and Erika Baksa-Varga},
+  journal={Pollack Periodica: An International Journal for Engineering and Information Sciences},
   year={2025}
 }
 ```

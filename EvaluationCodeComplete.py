@@ -680,29 +680,9 @@ class QuestionEvaluator:
             sns.barplot(x='Language', y='Quality Score', hue='Complexity', data=quality_df)
             plt.title('Question Quality Score by Language and Code Complexity')
             plt.savefig('evaluation_plots/quality_by_language_complexity.png')
-            plt.close()
-        
-        # 2. Bloom's taxonomy distribution by language
-        plt.figure(figsize=(14, 10))
-        bloom_order = ['remember', 'understand', 'apply', 'analyze', 'evaluate', 'create']
-        
-        for i, (lang, lang_name) in enumerate(zip(['C_questions', 'CPP_questions', 'Java_questions', 'Python_questions'], 
-                                                self.languages)):
-            if lang in self.dfs:
-                plt.subplot(2, 2, i+1)
-                df = self.dfs[lang]
-                bloom_counts = df['blooms_level'].value_counts().reindex(bloom_order).fillna(0)
-                bloom_counts.plot(kind='bar', color=sns.color_palette("viridis", len(bloom_counts)))
-                plt.title(f'Bloom\'s Taxonomy Distribution - {lang_name}')
-                plt.xlabel('Cognitive Level')
-                plt.ylabel('Count')
-                plt.xticks(rotation=45)
-        
-        plt.tight_layout()
-        plt.savefig('evaluation_plots/blooms_distribution.png')
-        plt.close()
-        
-        # 3. Spider plots for evaluation metrics by language
+            plt.close()        
+      
+        # 2. Spider plots for evaluation metrics by language
         metrics = [
             'linguistic_complexity', 'code_coverage', 'blooms_distribution',
             'precision_score', 'recall_score', 'novelty_score', 
@@ -750,7 +730,7 @@ class QuestionEvaluator:
             plt.savefig('evaluation_plots/metrics_radar_chart.png')
             plt.close()
         
-        # 4. Quality score by difficulty level for each language
+        # 3. Quality score by difficulty level for each language
         level_data = []
         for lang, lang_name in zip(['C_questions', 'CPP_questions', 'Java_questions', 'Python_questions'], 
                                   self.languages):
@@ -773,7 +753,7 @@ class QuestionEvaluator:
             plt.savefig('evaluation_plots/quality_by_difficulty.png')
             plt.close()
         
-        # 5. Heatmap of correlation between metrics
+        # 4. Heatmap of correlation between metrics
         for lang, lang_name in zip(['C_questions', 'CPP_questions', 'Java_questions', 'Python_questions'], 
                                   self.languages):
             if lang in self.dfs:
@@ -794,7 +774,7 @@ class QuestionEvaluator:
                 plt.savefig(f'evaluation_plots/correlation_heatmap_{lang_name}.png')
                 plt.close()
         
-        # 6. Distribution of quality scores
+        # 5. Distribution of quality scores
         plt.figure(figsize=(14, 8))
         for i, (lang, lang_name) in enumerate(zip(['C_questions', 'CPP_questions', 'Java_questions', 'Python_questions'], 
                                                 self.languages)):
@@ -811,7 +791,7 @@ class QuestionEvaluator:
         plt.savefig('evaluation_plots/quality_distribution.png')
         plt.close()
         
-        # 7. Boxplots of linguistic complexity by difficulty level
+        # 6. Boxplots of linguistic complexity by difficulty level
         plt.figure(figsize=(14, 8))
         ling_data = []
         
@@ -833,7 +813,7 @@ class QuestionEvaluator:
             plt.savefig('evaluation_plots/linguistic_complexity_boxplot.png')
             plt.close()
         
-        # 8. Bar chart of top 10 algorithms by quality score
+        # 7. Bar chart of top 10 algorithms by quality score
         algo_data = []
         for lang, lang_name in zip(['C_questions', 'CPP_questions', 'Java_questions', 'Python_questions'], 
                                   self.languages):
@@ -1028,10 +1008,10 @@ if __name__ == "__main__":
         
         # Define file paths
         file_paths = {
-            'C': r'd:\PyPrograms\Question Generation from Program Codes\Test Cases\CodeQualityMetricsFinal-C.csv',
-            'CPP': r'd:\PyPrograms\Question Generation from Program Codes\Test Cases\CodeQualityMetricsFinal-CPP.csv',
-            'Java': r'd:\PyPrograms\Question Generation from Program Codes\Test Cases\CodeQualityMetricsFinal-Java.csv',
-            'Python': r'd:\PyPrograms\Question Generation from Program Codes\Test Cases\CodeQualityMetricsFinal-Python.csv'
+            'C': 'CodeQualityMetricsFinal-C.csv',
+            'CPP': 'CodeQualityMetricsFinal-CPP.csv',
+            'Java': 'CodeQualityMetricsFinal-Java.csv',
+            'Python': 'CodeQualityMetricsFinal-Python.csv'
         }
         
         # Run evaluation
