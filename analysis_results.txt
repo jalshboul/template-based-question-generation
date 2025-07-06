@@ -1,0 +1,383 @@
+=== Starting Question Evaluation ===
+
+Loading data files...
+Successfully loaded C data with 19 entries
+Successfully loaded CPP data with 19 entries
+Successfully loaded Java data with 19 entries
+Successfully loaded Python data with 19 entries
+
+Preprocessing data...
+Processed 114 questions for C
+Processed 114 questions for CPP
+Processed 114 questions for Java
+Processed 114 questions for Python
+
+Evaluating linguistic complexity...
+
+=== Linguistic Complexity Analysis for C ===
+Average Flesch Reading Ease: 68.68
+Average Flesch-Kincaid Grade: 6.10
+Average words per question: 11.36
+Average linguistic complexity score: 0.37
+
+Beginner questions:
+  Average Flesch-Kincaid Grade: 4.64
+  Average linguistic complexity: 0.31
+
+Intermediate questions:
+  Average Flesch-Kincaid Grade: 6.01
+  Average linguistic complexity: 0.37
+
+Advanced questions:
+  Average Flesch-Kincaid Grade: 7.64
+  Average linguistic complexity: 0.41
+
+=== Linguistic Complexity Analysis for CPP ===
+Average Flesch Reading Ease: 67.44
+Average Flesch-Kincaid Grade: 6.37
+Average words per question: 11.39
+Average linguistic complexity score: 0.38
+
+Beginner questions:
+  Average Flesch-Kincaid Grade: 4.99
+  Average linguistic complexity: 0.33
+
+Intermediate questions:
+  Average Flesch-Kincaid Grade: 6.13
+  Average linguistic complexity: 0.38
+
+Advanced questions:
+  Average Flesch-Kincaid Grade: 7.99
+  Average linguistic complexity: 0.43
+
+=== Linguistic Complexity Analysis for Java ===
+Average Flesch Reading Ease: 67.34
+Average Flesch-Kincaid Grade: 6.27
+Average words per question: 11.63
+Average linguistic complexity score: 0.37
+
+Beginner questions:
+  Average Flesch-Kincaid Grade: 4.82
+  Average linguistic complexity: 0.33
+
+Intermediate questions:
+  Average Flesch-Kincaid Grade: 5.68
+  Average linguistic complexity: 0.34
+
+Advanced questions:
+  Average Flesch-Kincaid Grade: 8.31
+  Average linguistic complexity: 0.43
+
+=== Linguistic Complexity Analysis for Python ===
+Average Flesch Reading Ease: 66.86
+Average Flesch-Kincaid Grade: 6.41
+Average words per question: 11.91
+Average linguistic complexity score: 0.41
+
+Beginner questions:
+  Average Flesch-Kincaid Grade: 5.70
+  Average linguistic complexity: 0.38
+
+Intermediate questions:
+  Average Flesch-Kincaid Grade: 5.75
+  Average linguistic complexity: 0.38
+
+Advanced questions:
+  Average Flesch-Kincaid Grade: 7.78
+  Average linguistic complexity: 0.46
+
+Evaluating code coverage...
+
+=== Code Coverage Analysis for C ===
+Average variable coverage: 1.00
+Average function coverage: 1.00
+Average overall code coverage: 1.00
+
+=== Code Coverage Analysis for CPP ===
+Average variable coverage: 1.00
+Average function coverage: 1.00
+Average overall code coverage: 1.00
+
+=== Code Coverage Analysis for Java ===
+Average variable coverage: 1.00
+Average function coverage: 1.00
+Average overall code coverage: 1.00
+
+=== Code Coverage Analysis for Python ===
+Average variable coverage: 1.00
+Average function coverage: 1.00
+Average overall code coverage: 1.00
+
+Analyzing Bloom's taxonomy...
+
+=== Bloom's Taxonomy Analysis for C ===
+Bloom's Taxonomy Distribution:
+  Remember: 0.52
+  Understand: 0.10
+  Apply: 0.21
+  Analyze: 0.02
+  Create: 0.16
+Bloom's distribution evenness score: 0.70
+Beginner questions average Bloom's level: 1.47
+Intermediate questions average Bloom's level: 2.61
+Advanced questions average Bloom's level: 3.00
+
+=== Bloom's Taxonomy Analysis for CPP ===
+Bloom's Taxonomy Distribution:
+  Remember: 0.55
+  Understand: 0.10
+  Apply: 0.20
+  Analyze: 0.03
+  Create: 0.12
+Bloom's distribution evenness score: 0.69
+Beginner questions average Bloom's level: 1.82
+Intermediate questions average Bloom's level: 2.08
+Advanced questions average Bloom's level: 2.68
+
+=== Bloom's Taxonomy Analysis for Java ===
+Bloom's Taxonomy Distribution:
+  Remember: 0.52
+  Understand: 0.10
+  Apply: 0.21
+  Analyze: 0.04
+  Evaluate: 0.01
+  Create: 0.12
+Bloom's distribution evenness score: 0.74
+Beginner questions average Bloom's level: 1.61
+Intermediate questions average Bloom's level: 2.39
+Advanced questions average Bloom's level: 2.89
+
+=== Bloom's Taxonomy Analysis for Python ===
+Bloom's Taxonomy Distribution:
+  Remember: 0.58
+  Understand: 0.08
+  Apply: 0.18
+  Analyze: 0.04
+  Create: 0.12
+Bloom's distribution evenness score: 0.67
+Beginner questions average Bloom's level: 1.61
+Intermediate questions average Bloom's level: 2.18
+Advanced questions average Bloom's level: 2.71
+
+Evaluating precision and recall...
+
+=== Precision-Recall Analysis for C ===
+Average Precision: 0.35
+Average Recall: 1.00
+F1 Score: 0.52
+
+=== Precision-Recall Analysis for CPP ===
+Average Precision: 0.36
+Average Recall: 1.00
+F1 Score: 0.53
+
+=== Precision-Recall Analysis for Java ===
+Average Precision: 0.36
+Average Recall: 1.00
+F1 Score: 0.53
+
+=== Precision-Recall Analysis for Python ===
+Average Precision: 0.39
+Average Recall: 1.00
+F1 Score: 0.56
+
+Evaluating novelty...
+
+=== Novelty Analysis for C ===
+Average Novelty Score: 0.17
+Proportion of Advanced Questions: 0.19
+
+=== Novelty Analysis for CPP ===
+Average Novelty Score: 0.14
+Proportion of Advanced Questions: 0.14
+
+=== Novelty Analysis for Java ===
+Average Novelty Score: 0.15
+Proportion of Advanced Questions: 0.16
+
+=== Novelty Analysis for Python ===
+Average Novelty Score: 0.15
+Proportion of Advanced Questions: 0.18
+
+Evaluating educational alignment...
+
+=== Educational Alignment Analysis for C ===
+Overall Educational Alignment: 0.48
+Beginner questions alignment: 0.88
+Intermediate questions alignment: 0.39
+Advanced questions alignment: 0.17
+
+=== Educational Alignment Analysis for CPP ===
+Overall Educational Alignment: 0.41
+Beginner questions alignment: 0.74
+Intermediate questions alignment: 0.33
+Advanced questions alignment: 0.17
+
+=== Educational Alignment Analysis for Java ===
+Overall Educational Alignment: 0.43
+Beginner questions alignment: 0.78
+Intermediate questions alignment: 0.32
+Advanced questions alignment: 0.20
+
+=== Educational Alignment Analysis for Python ===
+Overall Educational Alignment: 0.39
+Beginner questions alignment: 0.67
+Intermediate questions alignment: 0.28
+Advanced questions alignment: 0.22
+
+Evaluating cognitive diversity...
+
+=== Cognitive Diversity Analysis for C ===
+Average Cognitive Diversity Score: 0.53
+
+=== Cognitive Diversity Analysis for CPP ===
+Average Cognitive Diversity Score: 0.50
+
+=== Cognitive Diversity Analysis for Java ===
+Average Cognitive Diversity Score: 0.56
+
+=== Cognitive Diversity Analysis for Python ===
+Average Cognitive Diversity Score: 0.48
+
+Calculating overall quality score...
+
+=== Overall Quality Score for C ===
+Average Quality Score: 0.58
+Simple code questions average quality: 0.57
+Moderate code questions average quality: 0.57
+Complex code questions average quality: 0.60
+Beginner questions average quality: 0.60
+Intermediate questions average quality: 0.57
+Advanced questions average quality: 0.57
+
+=== Overall Quality Score for CPP ===
+Average Quality Score: 0.57
+Simple code questions average quality: 0.57
+Moderate code questions average quality: 0.57
+Complex code questions average quality: 0.56
+Beginner questions average quality: 0.59
+Intermediate questions average quality: 0.56
+Advanced questions average quality: 0.56
+
+=== Overall Quality Score for Java ===
+Average Quality Score: 0.58
+Simple code questions average quality: 0.57
+Moderate code questions average quality: 0.60
+Complex code questions average quality: 0.57
+Beginner questions average quality: 0.60
+Intermediate questions average quality: 0.57
+Advanced questions average quality: 0.58
+
+=== Overall Quality Score for Python ===
+Average Quality Score: 0.57
+Simple code questions average quality: 0.55
+Moderate code questions average quality: 0.57
+Complex code questions average quality: 0.58
+Beginner questions average quality: 0.59
+Intermediate questions average quality: 0.55
+Advanced questions average quality: 0.57
+
+Generating comparative report...
+
+=== Comparative Report Across Languages ===
+
+Linguistic Complexity:
+  C: 0.37
+  CPP: 0.38
+  Java: 0.37
+  Python: 0.41
+
+Code Coverage:
+  C: 1.00
+  CPP: 1.00
+  Java: 1.00
+  Python: 1.00
+
+Blooms Distribution:
+  C: 0.55
+  CPP: 0.50
+  Java: 0.57
+  Python: 0.49
+
+Precision Score:
+  C: 0.35
+  CPP: 0.36
+  Java: 0.36
+  Python: 0.39
+
+Recall Score:
+  C: 1.00
+  CPP: 1.00
+  Java: 1.00
+  Python: 1.00
+
+Novelty Score:
+  C: 0.17
+  CPP: 0.14
+  Java: 0.15
+  Python: 0.15
+
+Educational Alignment:
+  C: 0.48
+  CPP: 0.41
+  Java: 0.43
+  Python: 0.39
+
+Cognitive Diversity:
+  C: 0.53
+  CPP: 0.50
+  Java: 0.56
+  Python: 0.48
+
+Quality Score:
+  C: 0.58
+  CPP: 0.57
+  Java: 0.58
+  Python: 0.57
+
+Languages Ranked by Overall Question Quality:
+1. Java: 0.58
+2. C: 0.58
+3. Python: 0.57
+4. CPP: 0.57
+Saved metrics to language_comparison_metrics.csv
+
+Analyzing Bloom's levels by code complexity...
+
+Analysis of Bloom's levels by code complexity complete.
+
+Generating summary statistics...
+
+Summary statistics saved to 'evaluation_stats_summary.csv'
+
+=== Summary Statistics ===
+
+C - Overall Quality Score:
+  Mean: 0.58
+  Median: 0.58
+  Std Dev: 0.05
+  Range: 0.47 to 0.71
+
+CPP - Overall Quality Score:
+  Mean: 0.57
+  Median: 0.57
+  Std Dev: 0.05
+  Range: 0.44 to 0.67
+
+Java - Overall Quality Score:
+  Mean: 0.58
+  Median: 0.58
+  Std Dev: 0.05
+  Range: 0.47 to 0.71
+
+Python - Overall Quality Score:
+  Mean: 0.57
+  Median: 0.57
+  Std Dev: 0.05
+  Range: 0.45 to 0.68
+
+Creating visualizations...
+
+Visualization complete. Plots saved to 'evaluation_plots' directory.
+
+=== Question Evaluation Complete ===
