@@ -1,13 +1,18 @@
-# Multilingual Code Question Generation System
+# Multi-Programming Languages Code Question Generation System
 
 This repository contains the implementation for a research project on template-based automatic question generation from code using static code analysis, supporting multiple programming languages and Bloom’s Taxonomy.
 
 ## Features
-- **Multilingual**: Supports Python, Java, C++, and C code.
-- **Bloom’s Taxonomy**: Ensures generated question sets have exactly one “remember” and the rest “evaluate” questions.
+- **Multi-Programming Languages**: Supports Python, Java, C++, and C code.
+- **Bloom’s Taxonomy**: Bloom's Taxonomy classifies educational learning objectives into levels of complexity and specificity. The six levels, from the simplest to the most complex, are Remembering, Understanding, Applying, Analyzing, Evaluating, and Creating.  
 - **Template-based**: Uses customizable templates for question generation.
 - **Static Code Analysis**: Extracts functions, loops, conditionals, variables, and algorithms from code.
 - **Automated Evaluation**: Includes scripts for analyzing Bloom’s distribution and code quality.
+
+## Research Background
+This system implements the methodology from:
+> *"Template-Based Question Generation from Code Using Static Code Analysis"*  
+> by Jawad Alshboul and Erika Baksa-Varga
 
 ## Directory Structure
 ```
